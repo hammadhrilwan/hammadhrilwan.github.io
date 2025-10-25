@@ -63,14 +63,12 @@
 }
 
 [data-theme="dark"] .hero::before {
-  background-image: 
-    radial-gradient(circle at 25% 25%, var(--primary-color)10 2px, transparent 2px),
-    radial-gradient(circle at 75% 75%, var(--primary-color)06 1px, transparent 1px),
-    linear-gradient(90deg, transparent 49%, var(--primary-color)04 50%, transparent 51%),
-    linear-gradient(0deg, transparent 49%, var(--primary-color)02 50%, transparent 51%);
-  background-size: 50px 50px, 30px 30px, 100px 100px, 100px 100px;
-  background-position: 0 0, 25px 25px, 0 0, 0 0;
-  opacity: 0.4;
+  background: 
+    radial-gradient(circle at 20px 20px, #2563eb15 2px, transparent 3px),
+    linear-gradient(45deg, transparent 40%, #2563eb06 41%, #2563eb06 59%, transparent 60%),
+    linear-gradient(-45deg, transparent 40%, #2563eb04 41%, #2563eb04 59%, transparent 60%);
+  background-size: 40px 40px, 80px 80px, 80px 80px;
+  background-position: 0 0, 0 0, 40px 40px;
 }
 
 /* ===== GLOBAL STYLES ===== */
@@ -266,17 +264,15 @@ body {
   position: absolute;
   top: 0;
   right: 0;
-  width: 50%;
+  width: 60%;
   height: 100%;
-  background-image: 
-    radial-gradient(circle at 25% 25%, var(--primary-color)12 2px, transparent 2px),
-    radial-gradient(circle at 75% 75%, var(--primary-color)08 1px, transparent 1px),
-    linear-gradient(90deg, transparent 49%, var(--primary-color)05 50%, transparent 51%),
-    linear-gradient(0deg, transparent 49%, var(--primary-color)03 50%, transparent 51%);
-  background-size: 50px 50px, 30px 30px, 100px 100px, 100px 100px;
-  background-position: 0 0, 25px 25px, 0 0, 0 0;
+  background: 
+    radial-gradient(circle at 20px 20px, #2563eb20 2px, transparent 3px),
+    linear-gradient(45deg, transparent 40%, #2563eb08 41%, #2563eb08 59%, transparent 60%),
+    linear-gradient(-45deg, transparent 40%, #2563eb06 41%, #2563eb06 59%, transparent 60%);
+  background-size: 40px 40px, 80px 80px, 80px 80px;
+  background-position: 0 0, 0 0, 40px 40px;
   z-index: 1;
-  opacity: 0.6;
 }
 
 .hero-container {
@@ -856,8 +852,8 @@ body {
   }
 
   .hero::before {
-    width: 70%;
-    opacity: 0.3;
+    width: 80%;
+    background-size: 30px 30px, 60px 60px, 60px 60px;
   }
 
   .projects-container,
@@ -923,8 +919,7 @@ body {
 
   .hero::before {
     width: 100%;
-    opacity: 0.2;
-    background-size: 30px 30px, 20px 20px, 60px 60px, 60px 60px;
+    background-size: 20px 20px, 40px 40px, 40px 40px;
   }
 }
 
