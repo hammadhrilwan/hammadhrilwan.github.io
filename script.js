@@ -506,6 +506,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.navigationManager = new NavigationManager();
   window.smoothScroller = new SmoothScroller();
   window.animationManager = new AnimationManager();
+  window.scrollAnimationManager = new ScrollAnimationManager();
   window.performanceManager = new PerformanceManager();
   window.formManager = new FormManager();
   window.accessibilityManager = new AccessibilityManager();
@@ -706,6 +707,53 @@ function enhanceEmailLinks() {
   });
 }
 
+// ===== SCROLL ANIMATIONS =====
+class ScrollAnimationManager {
+  constructor() {
+    this.observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    this.init();
+  }
+
+  init() {
+    this.createObserver();
+    this.initScrollAnimations();
+    this.handleNavbarScroll();
+  }
+
+  createObserver() {
+    this.observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+        }
+      });
+    }, this.observerOptions);
+  }
+
+  initScrollAnimations() {
+    const animatedElements = document.querySelectorAll('.fade-in-up');
+    animatedElements.forEach(el => {
+      this.observer.observe(el);
+    });
+  }
+
+  handleNavbarScroll() {
+    window.addEventListener('scroll', () => {
+      const navbar = document.querySelector('.navbar');
+      const scrolled = window.scrollY > 50;
+      
+      if (scrolled) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  }
+}
+
 // ===== EXPORT FOR TESTING =====
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
@@ -713,6 +761,7 @@ if (typeof module !== 'undefined' && module.exports) {
     NavigationManager,
     SmoothScroller,
     AnimationManager,
+    ScrollAnimationManager,
     Utilities,
     copyEmail
   };
