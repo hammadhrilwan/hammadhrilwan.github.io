@@ -62,15 +62,6 @@
   --border-color: #334155;
 }
 
-[data-theme="dark"] .hero::before {
-  background: 
-    radial-gradient(circle at 20px 20px, #2563eb15 2px, transparent 3px),
-    linear-gradient(45deg, transparent 40%, #2563eb06 41%, #2563eb06 59%, transparent 60%),
-    linear-gradient(-45deg, transparent 40%, #2563eb04 41%, #2563eb04 59%, transparent 60%);
-  background-size: 40px 40px, 80px 80px, 80px 80px;
-  background-position: 0 0, 0 0, 40px 40px;
-}
-
 /* ===== GLOBAL STYLES ===== */
 * {
   margin: 0;
@@ -256,23 +247,6 @@ body {
   position: relative;
   background: var(--bg-color);
   padding: var(--spacing-3xl) 0;
-  overflow: hidden;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 60%;
-  height: 100%;
-  background: 
-    radial-gradient(circle at 20px 20px, #2563eb20 2px, transparent 3px),
-    linear-gradient(45deg, transparent 40%, #2563eb08 41%, #2563eb08 59%, transparent 60%),
-    linear-gradient(-45deg, transparent 40%, #2563eb06 41%, #2563eb06 59%, transparent 60%);
-  background-size: 40px 40px, 80px 80px, 80px 80px;
-  background-position: 0 0, 0 0, 40px 40px;
-  z-index: 1;
 }
 
 .hero-container {
@@ -281,7 +255,6 @@ body {
   padding: 0 var(--spacing-md);
   width: 100%;
   position: relative;
-  z-index: 2;
 }
 
 .hero-content {
@@ -851,11 +824,6 @@ body {
     font-size: var(--font-size-3xl);
   }
 
-  .hero::before {
-    width: 80%;
-    background-size: 30px 30px, 60px 60px, 60px 60px;
-  }
-
   .projects-container,
   .experience-container,
   .education-container {
@@ -915,11 +883,6 @@ body {
 
   .contact-details {
     text-align: center;
-  }
-
-  .hero::before {
-    width: 100%;
-    background-size: 20px 20px, 40px 40px, 40px 40px;
   }
 }
 
