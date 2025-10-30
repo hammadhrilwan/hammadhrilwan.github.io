@@ -482,14 +482,14 @@ a:hover::after {
 }
 
 [data-theme="dark"] .navbar {
-  background: #000000;
-  backdrop-filter: none;
+  background: #000000 !important;
+  backdrop-filter: none !important;
   border-bottom: 1px solid var(--border-color);
 }
 
 [data-theme="dark"] .navbar.scrolled {
-  background: #000000;
-  backdrop-filter: none;
+  background: #000000 !important;
+  backdrop-filter: none !important;
 }
 
 .nav-container {
@@ -721,6 +721,86 @@ a:hover::after {
   color: var(--text-secondary);
   margin-bottom: var(--spacing-xl);
   line-height: 1.6;
+}
+
+/* GitHub Activity Section */
+.github-activity {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.github-activity h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+}
+
+.github-contributions {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.contributions-chart {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .contributions-chart {
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
+}
+
+.github-links {
+  display: flex;
+  justify-content: center;
+}
+
+.github-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 400;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.github-link:hover {
+  color: var(--accent-color);
+}
+
+.github-link::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--accent-color);
+  transition: width 0.3s ease;
+}
+
+.github-link:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .github-activity {
+    margin-top: 2rem;
+  }
+  
+  .github-activity h3 {
+    font-size: 1.3rem;
+  }
+  
+  .contributions-chart {
+    border-radius: 6px;
+  }
 }
 
 .skills-container {
