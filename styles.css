@@ -1437,6 +1437,22 @@ a:hover::after {
 
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
+  /* Fix theme toggle positioning on mobile */
+  .theme-toggle {
+    top: var(--spacing-md);
+    right: 60px; /* Move left to avoid hamburger menu */
+    padding: var(--spacing-xs);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .theme-toggle i {
+    font-size: var(--font-size-base);
+  }
+
   .nav-menu {
     position: fixed;
     top: 70px;
@@ -1460,6 +1476,16 @@ a:hover::after {
     display: flex;
   }
 
+  /* Navbar adjustments for mobile */
+  .nav-container {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .navbar {
+    padding: var(--spacing-sm) 0;
+  }
+
+  /* Hamburger menu animations */
   .hamburger.active span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
   }
@@ -1538,6 +1564,21 @@ a:hover::after {
 }
 
 @media (max-width: 480px) {
+  /* Theme toggle adjustments for very small screens */
+  .theme-toggle {
+    right: 50px; /* Even more space for very small screens */
+    width: 36px;
+    height: 36px;
+  }
+
+  .theme-toggle i {
+    font-size: 14px;
+  }
+
+  .hamburger {
+    margin-right: var(--spacing-xs);
+  }
+
   .hero-greeting {
     font-size: var(--font-size-xl);
   }
@@ -1548,6 +1589,16 @@ a:hover::after {
 
   .section-title {
     font-size: var(--font-size-2xl);
+  }
+
+  .hero-social {
+    gap: var(--spacing-sm);
+  }
+
+  .hero-social a {
+    width: 40px;
+    height: 40px;
+    font-size: var(--font-size-base);
   }
 
   .contact-item {
