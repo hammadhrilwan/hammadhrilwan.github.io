@@ -688,75 +688,6 @@ window.addEventListener('unhandledrejection', (e) => {
   // You could send this to an error reporting service
 });
 
-// ===== EMAIL HANDLING =====
-function copyEmail() {
-  const email = 'hammadhril.contact@gmail.com';
-  
-  // Modern clipboard API
-  if (navigator.clipboard && window.isSecureContext) {
-    navigator.clipboard.writeText(email).then(() => {
-      showEmailCopyMessage('Email copied to clipboard!');
-    }).catch(() => {
-      fallbackCopyEmail(email);
-    });
-  } else {
-    // Fallback for older browsers
-    fallbackCopyEmail(email);
-  }
-}
-
-function fallbackCopyEmail(email) {
-  const textArea = document.createElement('textarea');
-  textArea.value = email;
-  textArea.style.position = 'fixed';
-  textArea.style.left = '-999999px';
-  textArea.style.top = '-999999px';
-  document.body.appendChild(textArea);
-  textArea.focus();
-  textArea.select();
-  
-  try {
-    document.execCommand('copy');
-    showEmailCopyMessage('Email copied to clipboard!');
-  } catch (err) {
-    showEmailCopyMessage('Please manually copy: ' + email);
-  } finally {
-    document.body.removeChild(textArea);
-  }
-}
-
-function showEmailCopyMessage(message) {
-  // Remove existing message if any
-  const existingMessage = document.querySelector('.copy-message');
-  if (existingMessage) {
-    existingMessage.remove();
-  }
-  
-  const messageDiv = document.createElement('div');
-  messageDiv.className = 'copy-message';
-  messageDiv.textContent = message;
-  messageDiv.style.cssText = `
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: var(--secondary-color);
-    color: white;
-    padding: 12px 20px;
-    border-radius: 8px;
-    font-size: 14px;
-    z-index: 10000;
-    animation: slideInRight 0.3s ease, fadeOut 0.3s ease 2.7s forwards;
-  `;
-  
-  document.body.appendChild(messageDiv);
-  
-  setTimeout(() => {
-    if (messageDiv.parentNode) {
-      messageDiv.remove();
-    }
-  }, 3000);
-}
-
 // ===== EMAIL LINK ENHANCEMENT =====
 function enhanceEmailLinks() {
   // Add click handler to detect if mailto fails on Windows
@@ -830,7 +761,6 @@ if (typeof module !== 'undefined' && module.exports) {
     SmoothScroller,
     AnimationManager,
     ScrollAnimationManager,
-    Utilities,
-    copyEmail
+    Utilities
   };
 }
