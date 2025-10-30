@@ -208,10 +208,6 @@ body {
 
 /* ===== THEME TOGGLE ===== */
 .theme-toggle {
-  position: fixed;
-  top: var(--spacing-lg);
-  right: var(--spacing-lg);
-  z-index: 1000;
   background: var(--bg-secondary);
   border: 2px solid var(--border-color);
   border-radius: var(--radius-xl);
@@ -219,6 +215,15 @@ body {
   cursor: pointer;
   transition: all var(--transition-base);
   box-shadow: var(--shadow-medium);
+  display: none; /* Hidden by default, shown on desktop */
+}
+
+@media (min-width: 769px) {
+  .theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
 
 .theme-toggle:hover {
@@ -502,6 +507,17 @@ a:hover::after {
   padding: var(--spacing-md) var(--spacing-md);
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+}
+
+/* Desktop: Logo | Menu | Theme Toggle */
+/* Mobile: Logo | Theme Toggle + Hamburger */
+.nav-container > .theme-toggle {
+  order: 2; /* Position between menu and hamburger on desktop */
+}
+
+.nav-container > .hamburger {
+  order: 3; /* Position after theme toggle */
 }
 
 .nav-logo a {
@@ -1437,23 +1453,45 @@ a:hover::after {
 
 /* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 768px) {
-  /* Fix theme toggle positioning on mobile */
+  /* Show theme toggle on mobile */
   .theme-toggle {
-    top: var(--spacing-md);
-    right: 60px; /* Move left to avoid hamburger menu */
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
     padding: var(--spacing-xs);
     width: 40px;
     height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin-right: var(--spacing-sm);
   }
 
   .theme-toggle i {
     font-size: var(--font-size-base);
   }
 
+  /* Mobile nav container layout */
+  .nav-container {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .navbar {
+    padding: var(--spacing-sm) 0;
+  }
+
+  /* Create a right-side group for theme toggle + hamburger */
+  .nav-container {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    gap: var(--spacing-sm);
+    align-items: center;
+  }
+
+  .nav-logo {
+    grid-column: 1;
+  }
+
   .nav-menu {
+    grid-column: 1 / -1;
+    grid-row: 2;
     position: fixed;
     top: 70px;
     left: -100%;
@@ -1468,12 +1506,19 @@ a:hover::after {
     border-top: 1px solid var(--border-color);
   }
 
-  .nav-menu.active {
-    left: 0;
+  .theme-toggle {
+    grid-column: 2;
+    grid-row: 1;
   }
 
   .hamburger {
+    grid-column: 3;
+    grid-row: 1;
     display: flex;
+  }
+
+  .nav-menu.active {
+    left: 0;
   }
 
   /* Navbar adjustments for mobile */
@@ -1566,17 +1611,17 @@ a:hover::after {
 @media (max-width: 480px) {
   /* Theme toggle adjustments for very small screens */
   .theme-toggle {
-    right: 50px; /* Even more space for very small screens */
-    width: 36px;
-    height: 36px;
+    width: 36px !important;
+    height: 36px !important;
+    margin-right: var(--spacing-xs) !important;
   }
 
   .theme-toggle i {
-    font-size: 14px;
+    font-size: 14px !important;
   }
 
-  .hamburger {
-    margin-right: var(--spacing-xs);
+  .nav-container {
+    gap: var(--spacing-xs);
   }
 
   .hero-greeting {
