@@ -482,12 +482,12 @@ a:hover::after {
 }
 
 [data-theme="dark"] .navbar {
-  background: rgba(0, 0, 0, 0.95);
+  background: #000000;
   border-bottom: 1px solid var(--border-color);
 }
 
 [data-theme="dark"] .navbar.scrolled {
-  background: rgba(0, 0, 0, 0.98);
+  background: #000000;
 }
 
 .nav-container {
