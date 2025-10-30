@@ -483,11 +483,13 @@ a:hover::after {
 
 [data-theme="dark"] .navbar {
   background: #000000;
+  backdrop-filter: none;
   border-bottom: 1px solid var(--border-color);
 }
 
 [data-theme="dark"] .navbar.scrolled {
   background: #000000;
+  backdrop-filter: none;
 }
 
 .nav-container {
