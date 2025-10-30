@@ -5,6 +5,73 @@ const hamburger = document.getElementById('hamburger');
 const themeToggle = document.getElementById('theme-toggle');
 const navLinks = document.querySelectorAll('.nav-link');
 
+// ===== MODERN SMOOTH SCROLL ANIMATIONS =====
+class ModernScrollAnimations {
+  constructor() {
+    this.observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+    this.init();
+  }
+
+  init() {
+    this.createObserver();
+    this.addParallaxEffects();
+    this.setupSmoothScrolling();
+  }
+
+  createObserver() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+          // Add staggered animations for child elements
+          const children = entry.target.querySelectorAll('.stagger-animation');
+          children.forEach((child, index) => {
+            setTimeout(() => {
+              child.classList.add('animate-in');
+            }, index * 100);
+          });
+        }
+      });
+    }, this.observerOptions);
+
+    // Observe all sections and animation targets
+    const animationTargets = document.querySelectorAll('section, .project-item, .skill-item, .timeline-item');
+    animationTargets.forEach(target => observer.observe(target));
+  }
+
+  addParallaxEffects() {
+    window.addEventListener('scroll', () => {
+      const scrolled = window.pageYOffset;
+      const parallaxElements = document.querySelectorAll('.parallax-element');
+      
+      parallaxElements.forEach(element => {
+        const speed = element.dataset.speed || 0.5;
+        const yPos = -(scrolled * speed);
+        element.style.transform = `translateY(${yPos}px)`;
+      });
+    });
+  }
+
+  setupSmoothScrolling() {
+    // Enhanced smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  }
+}
+
 // ===== THEME MANAGEMENT =====
 class ThemeManager {
   constructor() {
@@ -507,6 +574,7 @@ document.addEventListener('DOMContentLoaded', () => {
   window.smoothScroller = new SmoothScroller();
   window.animationManager = new AnimationManager();
   window.scrollAnimationManager = new ScrollAnimationManager();
+  window.modernScrollAnimations = new ModernScrollAnimations(); // New artistic animations
   window.performanceManager = new PerformanceManager();
   window.formManager = new FormManager();
   window.accessibilityManager = new AccessibilityManager();
