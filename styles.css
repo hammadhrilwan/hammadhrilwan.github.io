@@ -1206,12 +1206,12 @@ a:not(.primary-link):not(.btn):not([class*="button"]):hover::after {
   margin-bottom: var(--spacing-md);
 }
 
-.project-links .project-link {
-  color: var(--primary-color);
+.projects .project-links .project-link {
+  color: var(--primary-color) !important;
   text-decoration: none;
   font-weight: 500;
   font-size: var(--font-size-sm);
-  transition: all 0.3s ease;
+  transition: all 0.3s ease !important;
   padding: var(--spacing-xs) var(--spacing-sm);
   border-radius: var(--radius-md);
   border: 1px solid var(--primary-color);
@@ -1220,41 +1220,55 @@ a:not(.primary-link):not(.btn):not([class*="button"]):hover::after {
   display: flex;
   align-items: center;
   gap: var(--spacing-xs);
-  background: transparent;
+  background: transparent !important;
 }
 
-.project-links .project-link::before {
+.projects .project-links .project-link::before {
   content: '';
   position: absolute;
   top: 0;
   left: -100%;
   width: 100%;
   height: 100%;
-  background: #e5e7eb;
-  transition: left 0.3s ease;
+  background: #e5e7eb !important;
+  transition: left 0.3s ease !important;
   z-index: 0;
 }
 
-.project-links .project-link:hover::before {
-  left: 0;
+.projects .project-links .project-link:hover::before {
+  left: 0 !important;
 }
 
-.project-links .project-link:hover {
+.projects .project-links .project-link:hover {
   color: black !important;
-  border-color: var(--primary-color);
+  border-color: var(--primary-color) !important;
 }
 
-.project-links .project-link:hover span,
-.project-links .project-link:hover i {
+.projects .project-links .project-link:hover span,
+.projects .project-links .project-link:hover i {
   color: black !important;
   position: relative;
   z-index: 1;
 }
 
-.project-links .project-link span,
-.project-links .project-link i {
+.projects .project-links .project-link span,
+.projects .project-links .project-link i {
   position: relative;
   z-index: 1;
+}
+
+/* Additional fallback styles for button hover */
+div.project-links a.project-link:hover {
+  background-color: #e5e7eb !important;
+  color: black !important;
+}
+
+div.project-links a.project-link:hover span {
+  color: black !important;
+}
+
+div.project-links a.project-link:hover i {
+  color: black !important;
 }
 
 .project-tech {
