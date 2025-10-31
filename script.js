@@ -1,3 +1,46 @@
+// ===== INITIALIZATION =====
+document.addEventListener('DOMContentLoaded', function() {
+  // Initialize loading screen
+  const loading = document.getElementById('loading');
+  
+  // Hide loading screen after a short delay
+  setTimeout(() => {
+    if (loading) {
+      loading.classList.add('fade-out');
+      setTimeout(() => {
+        loading.style.display = 'none';
+      }, 500);
+    }
+  }, 800);
+
+  // Initialize performance optimizations
+  initializePerformanceOptimizations();
+});
+
+// ===== PERFORMANCE OPTIMIZATIONS =====
+function initializePerformanceOptimizations() {
+  // Lazy load images
+  if ('IntersectionObserver' in window) {
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          if (img.dataset.src) {
+            img.src = img.dataset.src;
+            img.removeAttribute('data-src');
+          }
+          img.classList.remove('lazy');
+          observer.unobserve(img);
+        }
+      });
+    });
+
+    document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+      imageObserver.observe(img);
+    });
+  }
+}
+
 // ===== GLOBAL VARIABLES =====
 const navbar = document.getElementById('navbar');
 const navMenu = document.getElementById('nav-menu');
@@ -9,8 +52,8 @@ const navLinks = document.querySelectorAll('.nav-link');
 class ModernScrollAnimations {
   constructor() {
     this.observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
+      threshold: 0.15,
+      rootMargin: '0px 0px -80px 0px'
     };
     this.init();
   }
@@ -19,6 +62,8 @@ class ModernScrollAnimations {
     this.createObserver();
     this.addParallaxEffects();
     this.setupSmoothScrolling();
+    this.initCursorFollower();
+    this.initTextRevealAnimations();
   }
 
   createObserver() {
@@ -26,20 +71,58 @@ class ModernScrollAnimations {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('animate-in');
+          
           // Add staggered animations for child elements
-          const children = entry.target.querySelectorAll('.stagger-animation');
-          children.forEach((child, index) => {
+          const staggerElements = entry.target.querySelectorAll('.stagger-1, .stagger-2, .stagger-3, .stagger-4, .stagger-5, .stagger-6');
+          staggerElements.forEach((element, index) => {
             setTimeout(() => {
-              child.classList.add('animate-in');
-            }, index * 100);
+              element.classList.add('animate-in');
+            }, index * 150);
           });
+
+          // Animate project cards with enhanced effects
+          if (entry.target.classList.contains('project-card')) {
+            setTimeout(() => {
+              entry.target.style.transform = 'translateY(0)';
+              entry.target.style.opacity = '1';
+            }, Math.random() * 300);
+          }
+
+          // Animate skill bars
+          if (entry.target.classList.contains('skill-item')) {
+            this.animateSkillBar(entry.target);
+          }
+
+          // Animate skills section
+          if (entry.target.classList.contains('skills')) {
+            this.animateAllSkillBars();
+          }
         }
       });
     }, this.observerOptions);
 
-    // Observe all sections and animation targets
-    const animationTargets = document.querySelectorAll('section, .project-item, .skill-item, .timeline-item');
+    // Observe all animation targets
+    const animationTargets = document.querySelectorAll('section, .project-card, .hero-content, .about-stats, .tech-item, .experience-item, .education-item, .skill-item, .testimonial-card');
     animationTargets.forEach(target => observer.observe(target));
+  }
+
+  animateSkillBar(skillItem) {
+    const progressBar = skillItem.querySelector('.skill-progress');
+    const progress = progressBar.dataset.progress;
+    
+    setTimeout(() => {
+      progressBar.style.setProperty('--progress-width', `${progress}%`);
+      progressBar.style.width = `${progress}%`;
+    }, 300);
+  }
+
+  animateAllSkillBars() {
+    const skillItems = document.querySelectorAll('.skill-item');
+    skillItems.forEach((item, index) => {
+      setTimeout(() => {
+        this.animateSkillBar(item);
+      }, index * 100);
+    });
   }
 
   addParallaxEffects() {
@@ -47,12 +130,29 @@ class ModernScrollAnimations {
     
     const updateParallax = () => {
       const scrolled = window.pageYOffset;
-      const parallaxElements = document.querySelectorAll('.parallax-element');
       
-      parallaxElements.forEach(element => {
-        const speed = element.dataset.speed || 0.5;
-        const yPos = -(scrolled * speed);
-        element.style.transform = `translate3d(0, ${yPos}px, 0)`;
+      // Hero parallax
+      const heroSection = document.querySelector('.hero');
+      if (heroSection) {
+        const heroOffset = scrolled * 0.5;
+        heroSection.style.transform = `translateY(${heroOffset}px)`;
+      }
+
+      // Floating elements
+      const floatingElements = document.querySelectorAll('.floating-element');
+      floatingElements.forEach((element, index) => {
+        const speed = parseFloat(element.dataset.speed) || 0.5;
+        const yPos = -(scrolled * speed * (0.8 + index * 0.1));
+        element.style.transform = `translate3d(0, ${yPos}px, 0) rotate(${scrolled * 0.1}deg)`;
+      });
+
+      // Project cards subtle parallax
+      const projectCards = document.querySelectorAll('.project-card');
+      projectCards.forEach((card, index) => {
+        if (this.isElementInViewport(card)) {
+          const cardOffset = scrolled * (0.02 + index * 0.005);
+          card.style.transform = `translateY(${cardOffset}px)`;
+        }
       });
       
       ticking = false;
@@ -66,6 +166,74 @@ class ModernScrollAnimations {
     }, { passive: true });
   }
 
+  initCursorFollower() {
+    // Only initialize on desktop
+    if (window.innerWidth > 768) {
+      const cursor = document.createElement('div');
+      cursor.className = 'custom-cursor';
+      document.body.appendChild(cursor);
+
+      const cursorDot = document.createElement('div');
+      cursorDot.className = 'cursor-dot';
+      cursor.appendChild(cursorDot);
+
+      let mouseX = 0, mouseY = 0;
+      let cursorX = 0, cursorY = 0;
+
+      document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+      });
+
+      const animateCursor = () => {
+        cursorX += (mouseX - cursorX) * 0.1;
+        cursorY += (mouseY - cursorY) * 0.1;
+        
+        cursor.style.transform = `translate(${cursorX}px, ${cursorY}px)`;
+        requestAnimationFrame(animateCursor);
+      };
+      animateCursor();
+
+      // Cursor interactions
+      const interactiveElements = document.querySelectorAll('a, button, .project-card, .cta-primary, .cta-secondary');
+      interactiveElements.forEach(element => {
+        element.addEventListener('mouseenter', () => {
+          cursor.classList.add('cursor-hover');
+        });
+        element.addEventListener('mouseleave', () => {
+          cursor.classList.remove('cursor-hover');
+        });
+      });
+    }
+  }
+
+  initTextRevealAnimations() {
+    const textElements = document.querySelectorAll('.hero-main, .section-title');
+    textElements.forEach(element => {
+      const text = element.textContent;
+      element.innerHTML = '';
+      
+      const words = text.split(' ');
+      words.forEach((word, index) => {
+        const wordSpan = document.createElement('span');
+        wordSpan.className = 'word-reveal';
+        wordSpan.style.animationDelay = `${index * 0.1}s`;
+        wordSpan.textContent = word + ' ';
+        element.appendChild(wordSpan);
+      });
+    });
+  }
+
+  isElementInViewport(el) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+  }
+
   setupSmoothScrolling() {
     // Enhanced smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -77,6 +245,12 @@ class ModernScrollAnimations {
             behavior: 'smooth',
             block: 'start'
           });
+          
+          // Add a subtle shake animation to the target section
+          target.classList.add('section-highlight');
+          setTimeout(() => {
+            target.classList.remove('section-highlight');
+          }, 1000);
         }
       });
     });

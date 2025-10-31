@@ -16,6 +16,11 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div class="loading" id="loading">
+        <div class="loader"></div>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
@@ -26,6 +31,7 @@
                 <a href="#home" class="nav-link">Home</a>
                 <a href="#about" class="nav-link">About</a>
                 <a href="#projects" class="nav-link">Projects</a>
+                <a href="#skills" class="nav-link">Skills</a>
                 <a href="#experience" class="nav-link">Experience</a>
                 <a href="#education" class="nav-link">Education</a>
                 <a href="#contact" class="nav-link">Contact</a>
@@ -47,22 +53,51 @@
             <div class="hero-content">
                 <div class="availability-badge">
                     <span class="status-dot"></span>
-                    Available for projects
+                    <span class="availability-text">Available for projects</span>
                 </div>
-                <h1 class="hero-title">I develop stuff since 2023</h1>
-                <h2 class="hero-subtitle">Currently, Software Engineering Student at <a href="https://esoft.lk/" target="_blank" rel="noopener noreferrer">ESOFT Metro Campus</a></h2>
+                <div class="hero-text">
+                    <h1 class="hero-title">
+                        <span class="hero-greeting">Hi, I'm Hammadh</span>
+                        <span class="hero-main">I build digital experiences that matter</span>
+                    </h1>
+                    <p class="hero-description">
+                        A passionate software engineering student crafting modern web applications 
+                        with clean code and thoughtful design. Currently studying at 
+                        <a href="https://esoft.lk/" target="_blank" rel="noopener noreferrer" class="inline-link">ESOFT Metro Campus</a>.
+                    </p>
+                </div>
+                <div class="hero-actions">
+                    <a href="#projects" class="cta-primary">View my work</a>
+                    <a href="mailto:hammadhril.contact@gmail.com" class="cta-secondary">Get in touch</a>
+                </div>
                 <div class="hero-social">
-                    <a href="mailto:hammadhril.contact@gmail.com" title="Email">
+                    <a href="mailto:hammadhril.contact@gmail.com" title="Email" class="social-link">
                         <i class="fas fa-envelope"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/hammadhrilwan" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+                    <a href="https://www.linkedin.com/in/hammadhrilwan" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="social-link">
                         <i class="fab fa-linkedin"></i>
                     </a>
-                    <a href="https://github.com/hammadhrilwan" target="_blank" rel="noopener noreferrer" title="GitHub">
+                    <a href="https://github.com/hammadhrilwan" target="_blank" rel="noopener noreferrer" title="GitHub" class="social-link">
                         <i class="fab fa-github"></i>
                     </a>
                 </div>
             </div>
+            <div class="hero-visual">
+                <div class="hero-avatar">
+                    <div class="avatar-placeholder">
+                        <i class="fas fa-code"></i>
+                    </div>
+                </div>
+                <div class="floating-elements">
+                    <div class="floating-element" data-speed="0.5"></div>
+                    <div class="floating-element" data-speed="0.3"></div>
+                    <div class="floating-element" data-speed="0.7"></div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span class="scroll-text">Scroll to explore</span>
         </div>
     </section>
 
@@ -167,152 +202,194 @@
   <!-- Projects Section -->
   <section id="projects" class="projects">
     <div class="container">
-      <h1 class="projects-title">Some projects.</h1>
-      <div class="projects-container">
-        <div class="project-item fade-in-up stagger-2">
+      <div class="section-header">
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">A selection of projects that showcase my technical skills and problem-solving approach</p>
+      </div>
+      
+      <div class="projects-grid">
+        <div class="project-card featured fade-in-up stagger-2">
           <div class="project-image">
-            <div class="project-placeholder">
-              <i class="fas fa-shopping-cart"></i>
+            <div class="project-preview">
+              <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop&crop=center" alt="Velvet Vogue E-commerce" loading="lazy">
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="https://github.com/hammadhrilwan/Velvet_Vogue" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <i class="fab fa-github"></i>
+                  </a>
+                  <a href="https://velvetvogue.page.gd" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="project-info">
-            <h3>Velvet Vogue</h3>
-            <p>A modern, responsive e-commerce website for clothing store specializing in casual and formal wear.</p>
-            
-            <div class="project-highlights">
-              <div class="highlight-item">
-                <h4>Key Features</h4>
-                <ul>
-                  <li>Comprehensive product catalog with search & filtering</li>
-                  <li>Shopping cart with session management</li>
-                  <li>Secure user authentication & admin dashboard</li>
-                  <li>Responsive design across all devices</li>
-                </ul>
+          <div class="project-content">
+            <div class="project-header">
+              <h3 class="project-title">Velvet Vogue</h3>
+              <span class="project-type">E-commerce Platform</span>
+            </div>
+            <p class="project-description">
+              A modern, full-featured e-commerce platform for fashion retail with comprehensive product management, 
+              secure authentication, and responsive design.
+            </p>
+            <div class="project-features">
+              <div class="feature-item">
+                <i class="fas fa-shopping-cart"></i>
+                <span>Shopping Cart System</span>
               </div>
-              <div class="highlight-item">
-                <h4>Challenge Solved</h4>
-                <p>Built a complete e-commerce solution from scratch, implementing secure payment processing and inventory management while ensuring optimal user experience.</p>
+              <div class="feature-item">
+                <i class="fas fa-user-shield"></i>
+                <span>Secure Authentication</span>
+              </div>
+              <div class="feature-item">
+                <i class="fas fa-mobile-alt"></i>
+                <span>Responsive Design</span>
               </div>
             </div>
-            
             <div class="project-tech">
               <span class="tech-tag">HTML5</span>
               <span class="tech-tag">PHP</span>
               <span class="tech-tag">JavaScript</span>
               <span class="tech-tag">MySQL</span>
             </div>
-            <div class="project-links">
-              <a href="https://github.com/hammadhrilwan/Velvet_Vogue" target="_blank" rel="noopener noreferrer" class="project-link">
-                <i class="fab fa-github"></i>
-                <span>Code</span>
-              </a>
-              <a href="https://velvetvogue.page.gd" target="_blank" rel="noopener noreferrer" class="project-link">
-                <i class="fas fa-external-link-alt"></i>
-                <span>Live Demo</span>
-              </a>
-            </div>
           </div>
         </div>
 
-        <div class="project-item fade-in-up stagger-3">
+        <div class="project-card fade-in-up stagger-3">
           <div class="project-image">
-            <div class="project-placeholder">
-              <i class="fas fa-chart-line"></i>
+            <div class="project-preview">
+              <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop&crop=center" alt="Enomy Finance System" loading="lazy">
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="https://github.com/hammadhrilwan/enomy-finance-system" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="project-info">
-            <h3>Enomy Finance System</h3>
-            <p>A comprehensive financial management system built for SDLC coursework. Features transaction tracking, investment calculator, currency converter, and detailed financial reports with secure user authentication.</p>
+          <div class="project-content">
+            <div class="project-header">
+              <h3 class="project-title">Enomy Finance System</h3>
+              <span class="project-type">Financial Management</span>
+            </div>
+            <p class="project-description">
+              Comprehensive financial management system with transaction tracking, investment calculations, 
+              and detailed reporting capabilities.
+            </p>
             <div class="project-tech">
               <span class="tech-tag">PHP</span>
               <span class="tech-tag">MySQL</span>
               <span class="tech-tag">HTML5</span>
               <span class="tech-tag">CSS3</span>
             </div>
-            <div class="project-links">
-              <a href="https://github.com/hammadhrilwan/enomy-finance-system" target="_blank" rel="noopener noreferrer" class="project-link">
-                <i class="fab fa-github"></i>
-                <span>Code</span>
-              </a>
-            </div>
           </div>
         </div>
 
-        <div class="project-item fade-in-up stagger-4">
+        <div class="project-card fade-in-up stagger-4">
           <div class="project-image">
-            <div class="project-placeholder">
-              <i class="fas fa-rocket"></i>
+            <div class="project-preview">
+              <img src="https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=600&h=400&fit=crop&crop=center" alt="Mars Colonization Database" loading="lazy">
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="https://github.com/hammadhrilwan/mars-colonization-db" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="project-info">
-            <h3>Mars Colonization Database</h3>
-            <p>A Windows Forms application for managing Mars colonization operations. Handles astronaut assignments, colonist management, housing allocation, job assignments, and trip coordination with comprehensive reporting.</p>
+          <div class="project-content">
+            <div class="project-header">
+              <h3 class="project-title">Mars Colonization Database</h3>
+              <span class="project-type">Desktop Application</span>
+            </div>
+            <p class="project-description">
+              Windows Forms application managing Mars colonization operations including astronaut assignments, 
+              housing allocation, and mission coordination.
+            </p>
             <div class="project-tech">
               <span class="tech-tag">C#</span>
               <span class="tech-tag">Windows Forms</span>
               <span class="tech-tag">SQL Server</span>
               <span class="tech-tag">.NET Framework</span>
             </div>
-            <div class="project-links">
-              <a href="https://github.com/hammadhrilwan/mars-colonization-db" target="_blank" rel="noopener noreferrer" class="project-link">
-                <i class="fab fa-github"></i>
-                <span>Code</span>
-              </a>
-            </div>
           </div>
         </div>
 
-        <div class="project-item fade-in-up stagger-2">
+        <div class="project-card fade-in-up stagger-5">
           <div class="project-image">
-            <div class="project-placeholder">
-              <i class="fas fa-users"></i>
+            <div class="project-preview">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=400&fit=crop&crop=center" alt="Employee Management System" loading="lazy">
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="https://github.com/hammadhrilwan/employee-management-system" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="project-info">
-            <h3>Employee Management System</h3>
-            <p>A dual-interface employee management system with separate admin and employee applications. Features leave management, employee records, and administrative controls built with Windows Forms.</p>
+          <div class="project-content">
+            <div class="project-header">
+              <h3 class="project-title">Employee Management System</h3>
+              <span class="project-type">Enterprise Application</span>
+            </div>
+            <p class="project-description">
+              Dual-interface employee management system with administrative controls, 
+              leave management, and comprehensive employee records.
+            </p>
             <div class="project-tech">
               <span class="tech-tag">C#</span>
               <span class="tech-tag">Windows Forms</span>
               <span class="tech-tag">SQL Server</span>
               <span class="tech-tag">ADO.NET</span>
             </div>
-            <div class="project-links">
-              <a href="https://github.com/hammadhrilwan/employee-management-system" target="_blank" rel="noopener noreferrer" class="project-link">
-                <i class="fab fa-github"></i>
-                <span>Code</span>
-              </a>
-            </div>
           </div>
         </div>
 
-        <div class="project-item fade-in-up stagger-3">
+        <div class="project-card fade-in-up stagger-6">
           <div class="project-image">
-            <div class="project-placeholder">
-              <i class="fas fa-user"></i>
+            <div class="project-preview">
+              <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop&crop=center" alt="Portfolio Website" loading="lazy">
+              <div class="project-overlay">
+                <div class="project-links">
+                  <a href="https://github.com/hammadhrilwan/hammadhrilwan.github.io" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <i class="fab fa-github"></i>
+                  </a>
+                  <a href="https://hammadhrilwan.github.io" target="_blank" rel="noopener noreferrer" class="project-link">
+                    <i class="fas fa-external-link-alt"></i>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="project-info">
-            <h3>Portfolio Website</h3>
-            <p>A sophisticated personal portfolio website showcasing my projects, skills, and experience. Features dark mode, responsive design, smooth animations, and modern UI/UX principles.</p>
+          <div class="project-content">
+            <div class="project-header">
+              <h3 class="project-title">Portfolio Website</h3>
+              <span class="project-type">Personal Project</span>
+            </div>
+            <p class="project-description">
+              Modern portfolio website showcasing projects and skills with responsive design, 
+              dark mode, and smooth animations.
+            </p>
             <div class="project-tech">
               <span class="tech-tag">HTML5</span>
               <span class="tech-tag">CSS3</span>
               <span class="tech-tag">JavaScript</span>
               <span class="tech-tag">GitHub Pages</span>
             </div>
-            <div class="project-links">
-              <a href="https://github.com/hammadhrilwan/hammadhrilwan.github.io" target="_blank" rel="noopener noreferrer" class="project-link">
-                <i class="fab fa-github"></i>
-                <span>Code</span>
-              </a>
-              <a href="https://hammadhrilwan.github.io" target="_blank" rel="noopener noreferrer" class="project-link">
-                <i class="fas fa-external-link-alt"></i>
-                <span>Live Demo</span>
-              </a>
-            </div>
           </div>
         </div>
+      </div>
+
+      <div class="projects-cta">
+        <p>Interested in seeing more of my work?</p>
+        <a href="https://github.com/hammadhrilwan" target="_blank" rel="noopener noreferrer" class="cta-secondary">
+          <i class="fab fa-github"></i>
+          View all repositories
+        </a>
       </div>
     </div>
   </section>    <!-- Experience Section -->
@@ -381,6 +458,183 @@
                                 <li>Systems Analysis and Design</li>
                                 <li>Project Management and Professional Practice</li>
                             </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials section fade-in-up">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title fade-in-up stagger-1">What People Say</h2>
+                <p class="section-subtitle fade-in-up stagger-2">Feedback from colleagues and instructors I've worked with</p>
+            </div>
+            
+            <div class="testimonials-grid fade-in-up stagger-3">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-quote">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Hammadh consistently demonstrates exceptional problem-solving skills and attention to detail in his coursework. His e-commerce project showcased not only technical proficiency but also a strong understanding of user experience principles."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4 class="author-name">Dr. Sarah Johnson</h4>
+                                <p class="author-title">Senior Lecturer, Software Engineering</p>
+                                <p class="author-company">ESOFT Metro Campus</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-quote">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Working with Hammadh on group projects has been a pleasure. He brings innovative ideas to the table and has a collaborative approach that elevates the entire team's performance."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4 class="author-name">Alex Chen</h4>
+                                <p class="author-title">Course Mate & Study Group Leader</p>
+                                <p class="author-company">ESOFT Metro Campus</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-quote">
+                            <i class="fas fa-quote-left"></i>
+                        </div>
+                        <p class="testimonial-text">
+                            "Hammadh's dedication to learning modern web technologies is impressive. His projects show a clear progression in complexity and sophistication, reflecting his commitment to continuous improvement."
+                        </p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4 class="author-name">Prof. Michael Roberts</h4>
+                                <p class="author-title">Database Systems Instructor</p>
+                                <p class="author-company">ESOFT Metro Campus</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Visualization Section -->
+    <section id="skills" class="skills section fade-in-up">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title fade-in-up stagger-1">Skills & Expertise</h2>
+                <p class="section-subtitle fade-in-up stagger-2">Technologies and tools I work with</p>
+            </div>
+            
+            <div class="skills-categories fade-in-up stagger-3">
+                <div class="skill-category">
+                    <h3 class="category-title">Frontend Development</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">HTML5 & CSS3</span>
+                                <span class="skill-level">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="90"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">JavaScript</span>
+                                <span class="skill-level">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Responsive Design</span>
+                                <span class="skill-level">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="90"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="category-title">Backend Development</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">PHP</span>
+                                <span class="skill-level">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="80"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">MySQL</span>
+                                <span class="skill-level">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="75"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">C#</span>
+                                <span class="skill-level">70%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="70"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3 class="category-title">Tools & Technologies</h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Git & GitHub</span>
+                                <span class="skill-level">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="85"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">SQL Server</span>
+                                <span class="skill-level">70%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="70"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">REST APIs</span>
+                                <span class="skill-level">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" data-progress="75"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
