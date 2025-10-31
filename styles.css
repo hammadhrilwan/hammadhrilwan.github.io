@@ -908,14 +908,16 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
 }
 
 [data-theme="dark"] .navbar {
-  background: rgba(0, 0, 0, 0.95);
-  border-bottom-color: rgba(255, 255, 255, 0.08);
+  background: #000000 !important;
+  background-color: #000000 !important;
+  border-bottom-color: rgba(255, 255, 255, 0.08) !important;
 }
 
 [data-theme="dark"] .navbar.scrolled {
-  background: rgba(0, 0, 0, 0.98);
-  border-bottom-color: rgba(255, 255, 255, 0.12);
-  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.3);
+  background: #000000 !important;
+  background-color: #000000 !important;
+  border-bottom-color: rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.3) !important;
 }
 
 .nav-container {
