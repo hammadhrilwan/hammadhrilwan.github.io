@@ -16,10 +16,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css?v=2025103109">
+    <link rel="stylesheet" href="styles.css?v=2025103110">
     
     <!-- Force project button styling -->
     <style>
+        /* Light mode styling */
         .project-link {
             background: #ffffff !important;
             background-color: #ffffff !important;
@@ -52,29 +53,46 @@
             background: transparent !important;
         }
         
+        /* Dark mode styling - keep original look */
+        [data-theme="dark"] .project-link {
+            background: rgba(255, 255, 255, 0.1) !important;
+            background-color: rgba(255, 255, 255, 0.1) !important;
+            color: #ffffff !important;
+            border: 2px solid rgba(255, 255, 255, 0.3) !important;
+        }
+        
+        [data-theme="dark"] .project-link:hover {
+            background: #BCBC82 !important;
+            background-color: #BCBC82 !important;
+            color: #000000 !important;
+            border-color: #BCBC82 !important;
+        }
+        
+        [data-theme="dark"] .project-link i {
+            color: #ffffff !important;
+        }
+        
+        [data-theme="dark"] .project-link:hover i {
+            color: #000000 !important;
+        }
+        
         /* Ensure no other backgrounds interfere */
         .project-link::before,
         .project-link::after {
             display: none !important;
         }
         
-        /* Force Font Awesome icons to be black */
+        /* Force Font Awesome icons styling */
         .project-link .fa,
         .project-link .fas,
         .project-link .fab {
-            color: #000000 !important;
             background: none !important;
         }
         
-        /* Force remove any conflicting styles */
-        .project-overlay .project-link {
-            background: #ffffff !important;
-            background-color: #ffffff !important;
-        }
-        
-        .project-overlay .project-link:hover {
-            background: #BCBC82 !important;
-            background-color: #BCBC82 !important;
+        [data-theme="dark"] .project-link .fa,
+        [data-theme="dark"] .project-link .fas,
+        [data-theme="dark"] .project-link .fab {
+            color: #ffffff !important;
         }
     </style>
 </head>
