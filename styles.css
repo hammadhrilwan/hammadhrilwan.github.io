@@ -426,27 +426,7 @@ section, .hero-content {
   background: var(--accent-color);
 }
 
-/* ===== THEME TOGGLE - DIEGO STYLE ===== */
-.theme-toggle {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  transition: all var(--transition-base);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: var(--spacing-sm);
-}
-
-.theme-toggle:hover {
-  opacity: 0.7;
-}
-
-.theme-toggle i {
-  font-size: var(--font-size-lg);
-  color: var(--text-primary);
-  transition: all var(--transition-base);
-}
+/* ===== THEME TOGGLE - Updated Styling ===== */
 
 /* ===== HEADER & NAVIGATION ===== */
 
@@ -928,14 +908,14 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
 }
 
 [data-theme="dark"] .navbar {
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.95);
   border-bottom-color: rgba(255, 255, 255, 0.08);
 }
 
 [data-theme="dark"] .navbar.scrolled {
-  background: rgba(0, 0, 0, 0.95);
+  background: rgba(0, 0, 0, 0.98);
   border-bottom-color: rgba(255, 255, 255, 0.12);
-  box-shadow: 0 1px 20px rgba(255, 255, 255, 0.02);
+  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.3);
 }
 
 .nav-container {
@@ -1010,10 +990,10 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
 }
 
 .theme-toggle {
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
+  background: transparent;
+  border: none;
   color: var(--text-secondary);
-  font-size: 1rem;
+  font-size: 1.25rem;
   cursor: pointer;
   padding: 0.75rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1027,14 +1007,17 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
 }
 
 .theme-toggle:hover {
-  color: var(--text-primary);
-  background: var(--bg-tertiary);
-  transform: scale(1.05);
-  border-color: var(--accent-color);
+  color: var(--accent-color);
+  background: var(--bg-secondary);
+  transform: scale(1.1);
 }
 
 .theme-toggle:active {
   transform: scale(0.95);
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .hamburger {
