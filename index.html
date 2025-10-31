@@ -16,7 +16,40 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css?v=2025103102">
+    <link rel="stylesheet" href="styles.css?v=2025103103">
+    
+    <!-- Force color override for debugging -->
+    <style>
+        :root {
+            --accent-color: #BCBC82 !important;
+            --accent-light: #CDD29A !important;
+            --accent-dark: #A6A66A !important;
+        }
+        
+        /* Force override any blue colors */
+        * {
+            color: inherit !important;
+        }
+        
+        .nav-link, .project-link, .cta-primary, .cta-secondary {
+            color: var(--text-primary) !important;
+        }
+        
+        .cta-primary {
+            background-color: var(--accent-color) !important;
+            border-color: var(--accent-color) !important;
+        }
+        
+        .project-link {
+            background: var(--accent-color) !important;
+            color: #000000 !important;
+        }
+        
+        /* Remove any potential blue from external sources */
+        a, button, input, select, textarea {
+            color: inherit !important;
+        }
+    </style>
 </head>
 <body>
     <!-- Loading Screen -->
