@@ -117,6 +117,8 @@ body {
   overflow-x: hidden;
   /* Enhanced scrolling for better performance */
   -webkit-overflow-scrolling: touch;
+  /* Remove tap highlights on mobile */
+  -webkit-tap-highlight-color: transparent;
 }
 
 /* Remove scroll-behavior from all elements - causes jank */
@@ -331,6 +333,27 @@ body {
 /* Add smooth scrolling only for navigation */
 html {
   scroll-padding-top: 80px;
+}
+
+/* Mobile touch optimizations - Remove tap highlights */
+*, *::before, *::after {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Interactive elements that need tap highlight removal */
+a, button, .btn, .nav-link, .theme-toggle, .project-link, .github-link,
+.hero-social a, .primary-link, .btn-primary, .btn-secondary {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  touch-action: manipulation;
+}
+
+/* Allow text selection for content areas */
+p, h1, h2, h3, h4, h5, h6, .article-content, .project-description {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
 }
 
 /* Reduce motion for users who prefer it */
@@ -951,6 +974,10 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
   transition: all 0.3s ease;
   cursor: pointer;
   border: 1px solid transparent;
+  /* Remove blue tap highlight on mobile */
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  touch-action: manipulation;
 }
 
 .tech-item:hover {
@@ -1057,6 +1084,10 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
   border: 1px solid transparent;
   position: relative;
   overflow: hidden;
+  /* Remove blue tap highlight on mobile */
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  touch-action: manipulation;
 }
 
 .project-item::before {
