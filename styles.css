@@ -1231,6 +1231,7 @@ a:not(.primary-link):not(.btn):not([class*="button"]):hover::after {
   border: 1px solid var(--primary-color);
   position: relative;
   overflow: hidden;
+  z-index: 1;
 }
 
 .project-links a::before {
@@ -1250,7 +1251,17 @@ a:not(.primary-link):not(.btn):not([class*="button"]):hover::after {
 }
 
 .project-links a:hover {
-  color: white;
+  color: white !important;
+  border-color: var(--primary-color);
+  position: relative;
+  z-index: 2;
+}
+
+/* Ensure text is always visible */
+.project-links a span,
+.project-links a {
+  position: relative;
+  z-index: 1;
 }
 
 .project-tech {
