@@ -716,10 +716,16 @@ a:hover::after {
   transition: all var(--transition-base);
 }
 
+.hero-subtitle a::after {
+  display: none !important;
+}
+
 .hero-subtitle a:hover {
-  text-decoration-color: var(--accent-color);
+  color: var(--text-primary) !important;
+  text-decoration-color: var(--accent-color) !important;
   text-decoration-thickness: 3px;
   text-underline-offset: 6px;
+  text-shadow: none !important;
 }
 
 .hero-social {
