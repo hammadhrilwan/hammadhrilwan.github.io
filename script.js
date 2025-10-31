@@ -43,16 +43,27 @@ class ModernScrollAnimations {
   }
 
   addParallaxEffects() {
-    window.addEventListener('scroll', () => {
+    let ticking = false;
+    
+    const updateParallax = () => {
       const scrolled = window.pageYOffset;
       const parallaxElements = document.querySelectorAll('.parallax-element');
       
       parallaxElements.forEach(element => {
         const speed = element.dataset.speed || 0.5;
         const yPos = -(scrolled * speed);
-        element.style.transform = `translateY(${yPos}px)`;
+        element.style.transform = `translate3d(0, ${yPos}px, 0)`;
       });
-    });
+      
+      ticking = false;
+    };
+
+    window.addEventListener('scroll', () => {
+      if (!ticking) {
+        requestAnimationFrame(updateParallax);
+        ticking = true;
+      }
+    }, { passive: true });
   }
 
   setupSmoothScrolling() {

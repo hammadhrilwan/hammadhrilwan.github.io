@@ -103,9 +103,8 @@
 
 /* ===== SMOOTH SCROLL & ARTISTIC ANIMATIONS ===== */
 html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 80px; /* Account for fixed header */
   font-size: 16px;
+  /* Remove scroll-behavior: smooth from here as it can cause jank */
 }
 
 body {
@@ -118,25 +117,22 @@ body {
   overflow-x: hidden;
   /* Enhanced scrolling for better performance */
   -webkit-overflow-scrolling: touch;
-  scroll-behavior: smooth;
 }
 
-/* Enhanced smooth scrolling for all elements */
-* {
-  scroll-behavior: smooth;
+/* Remove scroll-behavior from all elements - causes jank */
+
+/* Better scrolling performance - optimized */
+.container {
+  contain: layout style paint;
 }
 
-/* Better scrolling performance */
-.container, .section {
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  perspective: 1000px;
+.section {
+  contain: layout style;
 }
 
-/* Smoother transitions for all interactive elements */
-a, button, .btn, .nav-link, .project-item, .tech-item {
-  will-change: transform;
-  transform: translateZ(0);
+/* Only add GPU acceleration where needed - remove will-change */
+.project-item, .tech-item {
+  transform: translate3d(0, 0, 0);
 }
 
 /* ===== ARTISTIC ANIMATIONS ===== */
@@ -182,10 +178,10 @@ a, button, .btn, .nav-link, .project-item, .tech-item {
   }
 }
 
-/* Parallax scroll effect */
+/* Parallax scroll effect - optimized */
 .parallax-element {
-  transform: translateZ(0);
-  will-change: transform;
+  transform: translate3d(0, 0, 0);
+  /* Remove will-change as it can cause performance issues */
 }
 
 /* Text reveal animation */
@@ -318,6 +314,8 @@ a, button, .btn, .nav-link, .project-item, .tech-item {
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.6s ease-out;
+  /* Ensure animations don't interfere with scroll */
+  will-change: auto;
 }
 
 .fade-in-up.animate {
@@ -329,6 +327,24 @@ a, button, .btn, .nav-link, .project-item, .tech-item {
 .stagger-2 { transition-delay: 0.2s; }
 .stagger-3 { transition-delay: 0.3s; }
 .stagger-4 { transition-delay: 0.4s; }
+
+/* Add smooth scrolling only for navigation */
+html {
+  scroll-padding-top: 80px;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto !important;
+  }
+}
 
 /* ===== UTILITY CLASSES - DIEGO STYLE ===== */
 .container {
@@ -566,6 +582,8 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
   font-size: var(--font-size-base);
   transition: all var(--transition-base);
   position: relative;
+  /* Smooth scrolling only for navigation */
+  scroll-behavior: smooth;
 }
 
 .nav-link:hover {
