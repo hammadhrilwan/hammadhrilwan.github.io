@@ -1940,7 +1940,7 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
   color: #000000;
   width: 48px;
   height: 48px;
-  border-radius: 50%;
+  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
