@@ -2343,6 +2343,7 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
   margin-bottom: var(--spacing-md);
 }
 
+/* TEMPORARILY DISABLED TO FIX BUTTON VISIBILITY
 .projects .project-links .project-link {
   color: var(--primary-color) !important;
   text-decoration: none;
@@ -2390,6 +2391,7 @@ html:not([data-theme="dark"]) .projects .project-links .project-link::before {
   color: white !important;
   border-color: var(--primary-color) !important;
 }
+/* END TEMPORARILY DISABLED TO FIX BUTTON VISIBILITY */
 
 .projects .project-links .project-link:hover span,
 .projects .project-links .project-link:hover i {

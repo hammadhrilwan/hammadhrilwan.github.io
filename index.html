@@ -16,11 +16,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css?v=2025103110">
+    <link rel="stylesheet" href="styles.css?v=2025103111">
     
     <!-- Force project button styling -->
     <style>
-        /* Light mode styling */
+        /* ULTRA HIGH SPECIFICITY - Override everything */
+        .project-card .project-overlay .project-links .project-link,
+        .projects .project-card .project-overlay .project-links .project-link,
+        .project-overlay .project-links .project-link,
+        .projects .project-links .project-link,
         .project-link {
             background: #ffffff !important;
             background-color: #ffffff !important;
@@ -35,53 +39,75 @@
             justify-content: center !important;
             opacity: 1 !important;
             z-index: 10 !important;
-        }
-        
-        /* Override any conflicting styles */
-        .projects .project-links .project-link {
-            background: #ffffff !important;
-            background-color: #ffffff !important;
-            color: #000000 !important;
-            border: 2px solid #ffffff !important;
-            width: 48px !important;
-            height: 48px !important;
             padding: 0 !important;
+            margin: 0 !important;
+            text-decoration: none !important;
+            font-weight: normal !important;
+            overflow: visible !important;
         }
         
-        /* Remove pseudo-elements that might interfere */
+        /* Remove ALL pseudo-elements */
+        .project-card .project-overlay .project-links .project-link::before,
+        .project-card .project-overlay .project-links .project-link::after,
+        .projects .project-card .project-overlay .project-links .project-link::before,
+        .projects .project-card .project-overlay .project-links .project-link::after,
+        .project-overlay .project-links .project-link::before,
+        .project-overlay .project-links .project-link::after,
         .projects .project-links .project-link::before,
-        .project-link::before {
+        .projects .project-links .project-link::after,
+        .project-link::before,
+        .project-link::after {
             display: none !important;
             content: none !important;
             background: none !important;
+            opacity: 0 !important;
+            visibility: hidden !important;
         }
         
+        /* HOVER STATES */
+        .project-card .project-overlay .project-links .project-link:hover,
+        .projects .project-card .project-overlay .project-links .project-link:hover,
+        .project-overlay .project-links .project-link:hover,
+        .projects .project-links .project-link:hover,
         .project-link:hover {
             background: #BCBC82 !important;
             background-color: #BCBC82 !important;
             color: #000000 !important;
             border-color: #BCBC82 !important;
+            transform: scale(1.1) !important;
         }
         
-        .projects .project-links .project-link:hover {
-            background: #BCBC82 !important;
-            background-color: #BCBC82 !important;
-            color: #000000 !important;
-            border-color: #BCBC82 !important;
-        }
-        
-        .project-link i {
+        /* ICON STYLING */
+        .project-card .project-overlay .project-links .project-link i,
+        .projects .project-card .project-overlay .project-links .project-link i,
+        .project-overlay .project-links .project-link i,
+        .projects .project-links .project-link i,
+        .project-link i,
+        .project-link .fa,
+        .project-link .fas,
+        .project-link .fab {
             color: #000000 !important;
             background: transparent !important;
+            background-color: transparent !important;
             font-size: 1.25rem !important;
             z-index: 11 !important;
             position: relative !important;
+            line-height: 1 !important;
+            display: inline-block !important;
         }
         
-        .projects .project-links .project-link i {
+        /* HOVER ICON STATES */
+        .project-card .project-overlay .project-links .project-link:hover i,
+        .projects .project-card .project-overlay .project-links .project-link:hover i,
+        .project-overlay .project-links .project-link:hover i,
+        .projects .project-links .project-link:hover i,
+        .project-link:hover i,
+        .project-link:hover .fa,
+        .project-link:hover .fas,
+        .project-link:hover .fab {
             color: #000000 !important;
             background: transparent !important;
-            font-size: 1.25rem !important;
+            background-color: transparent !important;
         }
         
         .project-link:hover i {
@@ -89,7 +115,11 @@
             background: transparent !important;
         }
         
-        /* Dark mode styling - keep original look */
+        /* DARK MODE STYLING */
+        [data-theme="dark"] .project-card .project-overlay .project-links .project-link,
+        [data-theme="dark"] .projects .project-card .project-overlay .project-links .project-link,
+        [data-theme="dark"] .project-overlay .project-links .project-link,
+        [data-theme="dark"] .projects .project-links .project-link,
         [data-theme="dark"] .project-link {
             background: rgba(255, 255, 255, 0.1) !important;
             background-color: rgba(255, 255, 255, 0.1) !important;
@@ -97,6 +127,10 @@
             border: 2px solid rgba(255, 255, 255, 0.3) !important;
         }
         
+        [data-theme="dark"] .project-card .project-overlay .project-links .project-link:hover,
+        [data-theme="dark"] .projects .project-card .project-overlay .project-links .project-link:hover,
+        [data-theme="dark"] .project-overlay .project-links .project-link:hover,
+        [data-theme="dark"] .projects .project-links .project-link:hover,
         [data-theme="dark"] .project-link:hover {
             background: #BCBC82 !important;
             background-color: #BCBC82 !important;
@@ -104,32 +138,37 @@
             border-color: #BCBC82 !important;
         }
         
-        [data-theme="dark"] .project-link i {
-            color: #ffffff !important;
-        }
-        
-        [data-theme="dark"] .project-link:hover i {
-            color: #000000 !important;
-        }
-        
-        /* Ensure no other backgrounds interfere */
-        .project-link::before,
-        .project-link::after {
-            display: none !important;
-        }
-        
-        /* Force Font Awesome icons styling */
-        .project-link .fa,
-        .project-link .fas,
-        .project-link .fab {
-            background: none !important;
-        }
-        
+        [data-theme="dark"] .project-card .project-overlay .project-links .project-link i,
+        [data-theme="dark"] .projects .project-card .project-overlay .project-links .project-link i,
+        [data-theme="dark"] .project-overlay .project-links .project-link i,
+        [data-theme="dark"] .projects .project-links .project-link i,
+        [data-theme="dark"] .project-link i,
         [data-theme="dark"] .project-link .fa,
         [data-theme="dark"] .project-link .fas,
         [data-theme="dark"] .project-link .fab {
             color: #ffffff !important;
         }
+        
+        [data-theme="dark"] .project-card .project-overlay .project-links .project-link:hover i,
+        [data-theme="dark"] .projects .project-card .project-overlay .project-links .project-link:hover i,
+        [data-theme="dark"] .project-overlay .project-links .project-link:hover i,
+        [data-theme="dark"] .projects .project-links .project-link:hover i,
+        [data-theme="dark"] .project-link:hover i,
+        [data-theme="dark"] .project-link:hover .fa,
+        [data-theme="dark"] .project-link:hover .fas,
+        [data-theme="dark"] .project-link:hover .fab {
+            color: #000000 !important;
+        }
+        
+        /* FORCE OVERRIDE ANY REMAINING CONFLICTING STYLES */
+        * .project-link {
+            background: #ffffff !important;
+        }
+        
+        [data-theme="dark"] * .project-link {
+            background: rgba(255, 255, 255, 0.1) !important;
+        }
+    </style>
     </style>
 </head>
 <body>
