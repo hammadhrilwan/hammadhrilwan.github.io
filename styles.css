@@ -772,11 +772,9 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
 }
 
 .hero-subtitle a {
-  color: var(--text-primary) !important;
-  text-decoration: underline !important;
-  text-decoration-color: var(--text-secondary) !important;
-  text-decoration-thickness: 2px !important;
-  text-underline-offset: 4px !important;
+  color: #5a6b3a !important; /* Darker green, more natural */
+  text-decoration: none !important; /* Remove line initially */
+  font-weight: 500 !important;
   transition: all var(--transition-base) !important;
   position: relative;
 }
@@ -786,11 +784,12 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
 }
 
 .hero-subtitle a:hover {
-  color: var(--accent-color) !important;
-  text-decoration-color: var(--accent-color) !important;
-  text-decoration-thickness: 3px !important;
-  text-underline-offset: 6px !important;
-  text-shadow: 0 0 10px rgba(188, 188, 130, 0.8), 0 0 20px rgba(188, 188, 130, 0.6), 0 0 30px rgba(188, 188, 130, 0.4) !important;
+  color: #4a5a2f !important; /* Even darker green on hover */
+  text-decoration: underline !important;
+  text-decoration-color: #8ba572 !important; /* Subtle olive underline */
+  text-decoration-thickness: 2px !important;
+  text-underline-offset: 4px !important;
+  text-shadow: 0 0 8px rgba(139, 165, 114, 0.3) !important; /* Very subtle olive glow */
 }
 
 .hero-social {
