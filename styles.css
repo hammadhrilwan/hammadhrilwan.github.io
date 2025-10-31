@@ -437,7 +437,7 @@ a:hover {
 }
 
 /* Cyberpunk Link Underline Effect */
-a:not(.primary-link)::after {
+a:not(.primary-link):not(.btn):not([class*="button"])::after {
   content: '';
   position: absolute;
   bottom: -2px;
@@ -448,7 +448,7 @@ a:not(.primary-link)::after {
   transition: width var(--transition-base);
 }
 
-a:not(.primary-link):hover::after {
+a:not(.primary-link):not(.btn):not([class*="button"]):hover::after {
   width: 100%;
 }
 
@@ -654,28 +654,28 @@ a:not(.primary-link):hover::after {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: rgba(107, 114, 128, 0.1);
-  color: #6b7280;
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(16, 185, 129, 0.1));
+  color: #22c55e;
   padding: 0.5rem 1rem;
   border-radius: 50px;
   font-size: 0.875rem;
   font-weight: 500;
   margin-bottom: 2rem;
-  border: 1px solid rgba(107, 114, 128, 0.2);
+  border: 1px solid rgba(34, 197, 94, 0.2);
   animation: pulse-availability 3s infinite;
 }
 
 .status-dot {
   width: 8px;
   height: 8px;
-  background: #6b7280;
+  background: #22c55e;
   border-radius: 50%;
   animation: pulse-dot 2s infinite;
 }
 
 [data-theme="dark"] .availability-badge {
-  background: rgba(107, 114, 128, 0.15);
-  border-color: rgba(107, 114, 128, 0.3);
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.15), rgba(16, 185, 129, 0.15));
+  border-color: rgba(34, 197, 94, 0.3);
 }
 
 @keyframes pulse-availability {
@@ -722,11 +722,11 @@ a:not(.primary-link):hover::after {
 }
 
 .hero-subtitle a:hover {
-  color: var(--text-primary) !important;
+  color: var(--accent-color) !important;
   text-decoration-color: var(--accent-color) !important;
   text-decoration-thickness: 3px !important;
   text-underline-offset: 6px !important;
-  text-shadow: 0 0 10px rgba(236, 72, 153, 0.6), 0 0 20px rgba(236, 72, 153, 0.4), 0 0 30px rgba(236, 72, 153, 0.2) !important;
+  text-shadow: 0 0 10px rgba(236, 72, 153, 0.8), 0 0 20px rgba(236, 72, 153, 0.6), 0 0 30px rgba(236, 72, 153, 0.4) !important;
 }
 
 .hero-social {
@@ -1761,6 +1761,11 @@ a:not(.primary-link):hover::after {
   transition: all 0.3s ease;
   border: none;
   cursor: pointer;
+  position: relative;
+}
+
+.primary-link::after {
+  display: none !important;
 }
 
 .primary-link:hover {
