@@ -534,13 +534,12 @@ a:hover::after {
 }
 
 .theme-toggle {
-  background: linear-gradient(145deg, var(--bg-color), var(--bg-secondary));
-  border: 2px solid var(--border-color);
+  background: transparent;
+  border: none;
   color: var(--text-secondary);
   font-size: var(--font-size-lg);
   cursor: pointer;
   padding: var(--spacing-sm);
-  border-radius: var(--radius-xl);
   transition: all var(--transition-base);
   width: 40px;
   height: 40px;
@@ -550,10 +549,8 @@ a:hover::after {
 }
 
 .theme-toggle:hover {
-  color: var(--primary-color);
-  border-color: var(--primary-color);
+  color: var(--accent-color);
   transform: scale(1.1);
-  box-shadow: 0 5px 15px rgba(37, 99, 235, 0.2);
 }
 
 .hamburger {
