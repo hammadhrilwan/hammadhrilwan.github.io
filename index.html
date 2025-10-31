@@ -33,6 +33,27 @@
             display: flex !important;
             align-items: center !important;
             justify-content: center !important;
+            opacity: 1 !important;
+            z-index: 10 !important;
+        }
+        
+        /* Override any conflicting styles */
+        .projects .project-links .project-link {
+            background: #ffffff !important;
+            background-color: #ffffff !important;
+            color: #000000 !important;
+            border: 2px solid #ffffff !important;
+            width: 48px !important;
+            height: 48px !important;
+            padding: 0 !important;
+        }
+        
+        /* Remove pseudo-elements that might interfere */
+        .projects .project-links .project-link::before,
+        .project-link::before {
+            display: none !important;
+            content: none !important;
+            background: none !important;
         }
         
         .project-link:hover {
@@ -42,7 +63,22 @@
             border-color: #BCBC82 !important;
         }
         
+        .projects .project-links .project-link:hover {
+            background: #BCBC82 !important;
+            background-color: #BCBC82 !important;
+            color: #000000 !important;
+            border-color: #BCBC82 !important;
+        }
+        
         .project-link i {
+            color: #000000 !important;
+            background: transparent !important;
+            font-size: 1.25rem !important;
+            z-index: 11 !important;
+            position: relative !important;
+        }
+        
+        .projects .project-links .project-link i {
             color: #000000 !important;
             background: transparent !important;
             font-size: 1.25rem !important;

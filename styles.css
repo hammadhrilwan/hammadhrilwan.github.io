@@ -1950,6 +1950,9 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
   backdrop-filter: blur(10px);
   border: 2px solid #ffffff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  opacity: 1;
+  z-index: 10;
+  position: relative;
 }
 
 .project-link:hover {
