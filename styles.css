@@ -8,9 +8,9 @@
   --primary-dark: #000000;         
   --primary-light: #333333;        
   --secondary-color: #666666;      /* Medium gray */
-  --accent-color: #ec4899;         /* Beautiful pink accent */
-  --accent-light: #f472b6;        /* Lighter pink */
-  --accent-dark: #db2777;          /* Darker pink */
+  --accent-color: #BCBC82;         /* Beautiful sage accent */
+  --accent-light: #CDD29A;        /* Lighter sage */
+  --accent-dark: #A6A66A;          /* Darker sage */
   --warning-color: #000000;        /* Black for consistency */
   
   /* Background Colors - Light Theme */
@@ -73,9 +73,9 @@
   --primary-dark: #ffffff;         
   --primary-light: #cccccc;        
   --secondary-color: #999999;      /* Medium gray */
-  --accent-color: #f472b6;         /* Bright pink for dark theme */
-  --accent-light: #f9a8d4;        /* Lighter pink */
-  --accent-dark: #ec4899;          /* Darker pink */
+  --accent-color: #CDD29A;         /* Bright sage for dark theme */
+  --accent-light: #D4D9A8;        /* Lighter sage */
+  --accent-dark: #BCBC82;          /* Darker sage */
   --warning-color: #ffffff;        /* White for consistency */
   
   /* Dark Background Colors */
