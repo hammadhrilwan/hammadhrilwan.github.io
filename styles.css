@@ -2337,14 +2337,45 @@ html:not([data-theme="dark"]) .project-item .project-links a.project-link:hover 
   .section-title {
     font-size: 2rem;
   }
-  
-  .project-info h3 {
-    font-size: 1.2rem;
-  }
-  
-  .article-item h3 {
-    font-size: 1.1rem;
-  }
+}
+
+/* ==== FINAL OVERRIDE FOR PROJECT BUTTONS ==== */
+/* These styles are placed at the end to ensure maximum specificity */
+
+/* Light mode - BLACK background with WHITE text */
+body:not([data-theme="dark"]) .project-links .project-link::before,
+html:not([data-theme="dark"]) .project-links .project-link::before,
+.project-links .project-link::before {
+  background: #000000 !important;
+}
+
+body:not([data-theme="dark"]) .project-links .project-link:hover,
+html:not([data-theme="dark"]) .project-links .project-link:hover,
+.project-links .project-link:hover {
+  color: #ffffff !important;
+}
+
+body:not([data-theme="dark"]) .project-links .project-link:hover span,
+body:not([data-theme="dark"]) .project-links .project-link:hover i,
+html:not([data-theme="dark"]) .project-links .project-link:hover span,
+html:not([data-theme="dark"]) .project-links .project-link:hover i,
+.project-links .project-link:hover span,
+.project-links .project-link:hover i {
+  color: #ffffff !important;
+}
+
+/* Dark mode - GREY background with BLACK text */
+[data-theme="dark"] .project-links .project-link::before {
+  background: #e5e7eb !important;
+}
+
+[data-theme="dark"] .project-links .project-link:hover {
+  color: #000000 !important;
+}
+
+[data-theme="dark"] .project-links .project-link:hover span,
+[data-theme="dark"] .project-links .project-link:hover i {
+  color: #000000 !important;
 }
 
 /* ===== LANDSCAPE MOBILE OPTIMIZATION ===== */
