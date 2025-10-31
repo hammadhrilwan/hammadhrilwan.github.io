@@ -1230,9 +1230,14 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
   left: -100%;
   width: 100%;
   height: 100%;
-  background: #e5e7eb !important;
+  background: black !important;
   transition: left 0.3s ease !important;
   z-index: 0;
+}
+
+/* Dark mode - grey background with black text */
+[data-theme="dark"] .projects .project-links .project-link::before {
+  background: #e5e7eb !important;
 }
 
 .projects .project-links .project-link:hover::before {
@@ -1240,15 +1245,25 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
 }
 
 .projects .project-links .project-link:hover {
-  color: black !important;
+  color: white !important;
   border-color: var(--primary-color) !important;
 }
 
 .projects .project-links .project-link:hover span,
 .projects .project-links .project-link:hover i {
-  color: black !important;
+  color: white !important;
   position: relative;
   z-index: 1;
+}
+
+/* Dark mode - black text on grey background */
+[data-theme="dark"] .projects .project-links .project-link:hover {
+  color: black !important;
+}
+
+[data-theme="dark"] .projects .project-links .project-link:hover span,
+[data-theme="dark"] .projects .project-links .project-link:hover i {
+  color: black !important;
 }
 
 .projects .project-links .project-link span,
@@ -1259,16 +1274,16 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
 
 /* Additional fallback styles for button hover */
 div.project-links a.project-link:hover {
-  background-color: #e5e7eb !important;
-  color: black !important;
+  background-color: black !important;
+  color: white !important;
 }
 
 div.project-links a.project-link:hover span {
-  color: black !important;
+  color: white !important;
 }
 
 div.project-links a.project-link:hover i {
-  color: black !important;
+  color: white !important;
 }
 
 /* Dark mode specific button hover styles */
@@ -1287,12 +1302,23 @@ div.project-links a.project-link:hover i {
 
 /* Force styles with highest specificity */
 .project-item .project-links a.project-link:hover {
-  background: #e5e7eb !important;
-  color: black !important;
+  background: black !important;
+  color: white !important;
 }
 
 .project-item .project-links a.project-link:hover span,
 .project-item .project-links a.project-link:hover i {
+  color: white !important;
+}
+
+/* Dark mode overrides for highest specificity */
+[data-theme="dark"] .project-item .project-links a.project-link:hover {
+  background: #e5e7eb !important;
+  color: black !important;
+}
+
+[data-theme="dark"] .project-item .project-links a.project-link:hover span,
+[data-theme="dark"] .project-item .project-links a.project-link:hover i {
   color: black !important;
 }
 
