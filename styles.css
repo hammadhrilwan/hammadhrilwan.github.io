@@ -433,7 +433,7 @@ a {
 
 a:hover {
   color: var(--primary-color);
-  text-shadow: 0 0 8px rgba(0, 255, 159, 0.6);
+  text-shadow: 0 0 8px rgba(236, 72, 153, 0.6);
 }
 
 /* Cyberpunk Link Underline Effect */
@@ -708,12 +708,13 @@ a:hover::after {
 }
 
 .hero-subtitle a {
-  color: var(--text-primary);
-  text-decoration: underline;
-  text-decoration-color: var(--text-secondary);
-  text-decoration-thickness: 2px;
-  text-underline-offset: 4px;
-  transition: all var(--transition-base);
+  color: var(--text-primary) !important;
+  text-decoration: underline !important;
+  text-decoration-color: var(--text-secondary) !important;
+  text-decoration-thickness: 2px !important;
+  text-underline-offset: 4px !important;
+  transition: all var(--transition-base) !important;
+  position: relative;
 }
 
 .hero-subtitle a::after {
@@ -723,8 +724,8 @@ a:hover::after {
 .hero-subtitle a:hover {
   color: var(--text-primary) !important;
   text-decoration-color: var(--accent-color) !important;
-  text-decoration-thickness: 3px;
-  text-underline-offset: 6px;
+  text-decoration-thickness: 3px !important;
+  text-underline-offset: 6px !important;
   text-shadow: none !important;
 }
 
