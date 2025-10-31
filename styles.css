@@ -431,13 +431,13 @@ a {
   position: relative;
 }
 
-a:hover {
+a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover {
   color: var(--primary-color);
   text-shadow: 0 0 8px rgba(236, 72, 153, 0.6);
 }
 
 /* Cyberpunk Link Underline Effect */
-a:not(.primary-link):not(.btn):not([class*="button"])::after {
+a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link)::after {
   content: '';
   position: absolute;
   bottom: -2px;
@@ -448,7 +448,7 @@ a:not(.primary-link):not(.btn):not([class*="button"])::after {
   transition: width var(--transition-base);
 }
 
-a:not(.primary-link):not(.btn):not([class*="button"]):hover::after {
+a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::after {
   width: 100%;
 }
 
@@ -1268,6 +1268,31 @@ div.project-links a.project-link:hover span {
 }
 
 div.project-links a.project-link:hover i {
+  color: black !important;
+}
+
+/* Dark mode specific button hover styles */
+[data-theme="dark"] .projects .project-links .project-link:hover,
+[data-theme="dark"] div.project-links a.project-link:hover {
+  background-color: #e5e7eb !important;
+  color: black !important;
+}
+
+[data-theme="dark"] .projects .project-links .project-link:hover span,
+[data-theme="dark"] .projects .project-links .project-link:hover i,
+[data-theme="dark"] div.project-links a.project-link:hover span,
+[data-theme="dark"] div.project-links a.project-link:hover i {
+  color: black !important;
+}
+
+/* Force styles with highest specificity */
+.project-item .project-links a.project-link:hover {
+  background: #e5e7eb !important;
+  color: black !important;
+}
+
+.project-item .project-links a.project-link:hover span,
+.project-item .project-links a.project-link:hover i {
   color: black !important;
 }
 
