@@ -1936,7 +1936,7 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
 }
 
 .project-link {
-  background: var(--accent-color);
+  background: #ffffff;
   color: #000000;
   width: 48px;
   height: 48px;
@@ -1948,28 +1948,28 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
   font-size: 1.25rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   backdrop-filter: blur(10px);
-  border: 2px solid var(--accent-color);
+  border: 2px solid #ffffff;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .project-link:hover {
-  background: #ffffff;
+  background: var(--accent-color);
   color: #000000;
   transform: scale(1.1);
-  border-color: #ffffff;
+  border-color: var(--accent-color);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 
 [data-theme="dark"] .project-link {
-  background: var(--accent-color);
-  color: #000000;
-  border-color: var(--accent-color);
-}
-
-[data-theme="dark"] .project-link:hover {
   background: #ffffff;
   color: #000000;
   border-color: #ffffff;
+}
+
+[data-theme="dark"] .project-link:hover {
+  background: var(--accent-color);
+  color: #000000;
+  border-color: var(--accent-color);
 }
 
 .project-content {
