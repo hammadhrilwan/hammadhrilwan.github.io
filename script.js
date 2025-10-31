@@ -87,42 +87,13 @@ class ModernScrollAnimations {
               entry.target.style.opacity = '1';
             }, Math.random() * 300);
           }
-
-          // Animate skill bars
-          if (entry.target.classList.contains('skill-item')) {
-            this.animateSkillBar(entry.target);
-          }
-
-          // Animate skills section
-          if (entry.target.classList.contains('skills')) {
-            this.animateAllSkillBars();
-          }
         }
       });
     }, this.observerOptions);
 
     // Observe all animation targets
-    const animationTargets = document.querySelectorAll('section, .project-card, .hero-content, .about-stats, .tech-item, .experience-item, .education-item, .skill-item, .testimonial-card');
+    const animationTargets = document.querySelectorAll('section, .project-card, .hero-content, .about-stats, .tech-item, .experience-item, .education-item, .testimonial-card');
     animationTargets.forEach(target => observer.observe(target));
-  }
-
-  animateSkillBar(skillItem) {
-    const progressBar = skillItem.querySelector('.skill-progress');
-    const progress = progressBar.dataset.progress;
-    
-    setTimeout(() => {
-      progressBar.style.setProperty('--progress-width', `${progress}%`);
-      progressBar.style.width = `${progress}%`;
-    }, 300);
-  }
-
-  animateAllSkillBars() {
-    const skillItems = document.querySelectorAll('.skill-item');
-    skillItems.forEach((item, index) => {
-      setTimeout(() => {
-        this.animateSkillBar(item);
-      }, index * 100);
-    });
   }
 
   addParallaxEffects() {
