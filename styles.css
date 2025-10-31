@@ -1235,6 +1235,11 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
   z-index: 0;
 }
 
+/* Light mode explicit - black background */
+html:not([data-theme="dark"]) .projects .project-links .project-link::before {
+  background: black !important;
+}
+
 /* Dark mode - grey background with black text */
 [data-theme="dark"] .projects .project-links .project-link::before {
   background: #e5e7eb !important;
@@ -1254,6 +1259,16 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
   color: white !important;
   position: relative;
   z-index: 1;
+}
+
+/* Light mode explicit - white text on black background */
+html:not([data-theme="dark"]) .projects .project-links .project-link:hover {
+  color: white !important;
+}
+
+html:not([data-theme="dark"]) .projects .project-links .project-link:hover span,
+html:not([data-theme="dark"]) .projects .project-links .project-link:hover i {
+  color: white !important;
 }
 
 /* Dark mode - black text on grey background */
@@ -1286,6 +1301,17 @@ div.project-links a.project-link:hover i {
   color: white !important;
 }
 
+/* Light mode explicit fallbacks */
+html:not([data-theme="dark"]) div.project-links a.project-link:hover {
+  background-color: black !important;
+  color: white !important;
+}
+
+html:not([data-theme="dark"]) div.project-links a.project-link:hover span,
+html:not([data-theme="dark"]) div.project-links a.project-link:hover i {
+  color: white !important;
+}
+
 /* Dark mode specific button hover styles */
 [data-theme="dark"] .projects .project-links .project-link:hover,
 [data-theme="dark"] div.project-links a.project-link:hover {
@@ -1308,6 +1334,17 @@ div.project-links a.project-link:hover i {
 
 .project-item .project-links a.project-link:hover span,
 .project-item .project-links a.project-link:hover i {
+  color: white !important;
+}
+
+/* Light mode highest specificity */
+html:not([data-theme="dark"]) .project-item .project-links a.project-link:hover {
+  background: black !important;
+  color: white !important;
+}
+
+html:not([data-theme="dark"]) .project-item .project-links a.project-link:hover span,
+html:not([data-theme="dark"]) .project-item .project-links a.project-link:hover i {
   color: white !important;
 }
 
