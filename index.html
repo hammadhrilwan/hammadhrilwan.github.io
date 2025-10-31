@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css?v=2025103107">
+    <link rel="stylesheet" href="styles.css?v=2025103108">
     
     <!-- Force project button styling -->
     <style>
@@ -25,6 +25,7 @@
             background-color: #ffffff !important;
             color: #000000 !important;
             border: 2px solid #ffffff !important;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
         }
         
         .project-link:hover {
@@ -36,10 +37,26 @@
         
         .project-link i {
             color: #000000 !important;
+            background: transparent !important;
         }
         
         .project-link:hover i {
             color: #000000 !important;
+            background: transparent !important;
+        }
+        
+        /* Ensure no other backgrounds interfere */
+        .project-link::before,
+        .project-link::after {
+            display: none !important;
+        }
+        
+        /* Force Font Awesome icons to be black */
+        .project-link .fa,
+        .project-link .fas,
+        .project-link .fab {
+            color: #000000 !important;
+            background: none !important;
         }
     </style>
 </head>
