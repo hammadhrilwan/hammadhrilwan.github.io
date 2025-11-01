@@ -61,6 +61,13 @@
   --radius-xl: 0.75rem;
   --radius-2xl: 1rem;
   
+  /* GitHub Contribution Colors - Light Theme */
+  --github-level-0: #ebedf0;
+  --github-level-1: #9be9a8;
+  --github-level-2: #40c463;
+  --github-level-3: #30a14e;
+  --github-level-4: #216e39;
+  
   /* Transitions - Smooth */
   --transition-fast: 0.15s ease;
   --transition-base: 0.3s ease;
@@ -92,6 +99,13 @@
   --shadow-medium: 0 2px 8px 0 rgba(255, 255, 255, 0.1);
   --shadow-large: 0 4px 16px 0 rgba(255, 255, 255, 0.1);
   --shadow-artistic: 0 8px 32px 0 rgba(255, 255, 255, 0.1);
+  
+  /* GitHub Contribution Colors - Dark Theme */
+  --github-level-0: #161b22;
+  --github-level-1: #0e4429;
+  --github-level-2: #006d32;
+  --github-level-3: #26a641;
+  --github-level-4: #39d353;
 }
 
 /* ===== GLOBAL STYLES ===== */
@@ -1921,6 +1935,31 @@ Uncomment the code below if you want the symbol to appear after the text on mobi
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   min-width: 320px;
 }
+
+/* GitHub Standard Green Colors for Contribution Chart */
+.contributions-chart .day[data-level="0"] { fill: var(--github-level-0) !important; }
+.contributions-chart .day[data-level="1"] { fill: var(--github-level-1) !important; }
+.contributions-chart .day[data-level="2"] { fill: var(--github-level-2) !important; }
+.contributions-chart .day[data-level="3"] { fill: var(--github-level-3) !important; }
+.contributions-chart .day[data-level="4"] { fill: var(--github-level-4) !important; }
+
+/* Alternative selectors for different chart implementations */
+.contributions-chart rect[data-level="0"] { fill: var(--github-level-0) !important; }
+.contributions-chart rect[data-level="1"] { fill: var(--github-level-1) !important; }
+.contributions-chart rect[data-level="2"] { fill: var(--github-level-2) !important; }
+.contributions-chart rect[data-level="3"] { fill: var(--github-level-3) !important; }
+.contributions-chart rect[data-level="4"] { fill: var(--github-level-4) !important; }
+
+/* Generic contribution squares */
+.contributions-chart .contribution-square {
+  transition: all 0.2s ease;
+}
+
+.contributions-chart .level-0 { background-color: var(--github-level-0) !important; }
+.contributions-chart .level-1 { background-color: var(--github-level-1) !important; }
+.contributions-chart .level-2 { background-color: var(--github-level-2) !important; }
+.contributions-chart .level-3 { background-color: var(--github-level-3) !important; }
+.contributions-chart .level-4 { background-color: var(--github-level-4) !important; }
 
 [data-theme="dark"] .contributions-chart {
   box-shadow: 0 4px 12px rgba(255, 255, 255, 0.1);
