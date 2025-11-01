@@ -1550,9 +1550,14 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
+  body {
+    padding-top: 0; /* Ensure no extra top padding on body */
+    scroll-padding-top: 80px; /* Add scroll padding for better scroll positioning */
+  }
+  
   .hero {
     min-height: auto; /* Remove fixed viewport height on mobile */
-    padding: 120px 0 var(--spacing-lg) 0; /* Increase top padding significantly */
+    padding: 160px 0 var(--spacing-lg) 0; /* Increase top padding even more */
     max-height: none; /* Ensure content can expand */
     overflow: visible; /* Ensure content is visible */
     display: block; /* Change from flex to block for better mobile flow */
@@ -1597,7 +1602,8 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
     font-size: 0.8rem;
     position: relative !important; /* Ensure it's in normal document flow */
     z-index: 1; /* Keep it below navbar but visible */
-    margin-top: 20px; /* Add some top margin for breathing room */
+    margin-top: 40px; /* Increase top margin for more breathing room */
+    margin-bottom: 20px; /* Add bottom margin too */
   }
   
   .hero-actions {
@@ -1634,8 +1640,12 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
 }
 
 @media (max-width: 480px) {
+  body {
+    scroll-padding-top: 80px; /* Add scroll padding for better scroll positioning */
+  }
+  
   .hero {
-    padding: 100px 0 var(--spacing-md) 0; /* Ensure enough top padding for navbar */
+    padding: 140px 0 var(--spacing-md) 0; /* Increase top padding for small mobile */
     min-height: auto; /* Ensure no fixed height constraints */
     max-height: none; /* Ensure content can expand */
     overflow: visible; /* Allow all content to be visible */
