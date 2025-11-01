@@ -972,13 +972,19 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
   position: relative;
   padding: 0.5rem 0.75rem;
   border-radius: var(--radius-md);
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.nav-link::after {
+.nav-link span {
+  position: relative;
+}
+
+.nav-link span::after {
   content: '';
   position: absolute;
-  bottom: -2px;
+  bottom: -6px;
   left: 50%;
   width: 0;
   height: 2px;
@@ -993,7 +999,7 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
   background: var(--bg-secondary);
 }
 
-.nav-link:hover::after {
+.nav-link:hover span::after {
   width: 30px;
 }
 
@@ -1002,7 +1008,7 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
   background: var(--bg-tertiary);
 }
 
-.nav-link.active::after {
+.nav-link.active span::after {
   width: 30px;
 }
 
@@ -1129,7 +1135,7 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
     border: 1px solid var(--border-color);
   }
 
-  .nav-link::after {
+  .nav-link span::after {
     display: none;
   }
 
