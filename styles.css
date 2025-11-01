@@ -928,6 +928,13 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
   max-width: 1200px;
   margin: 0 auto;
   position: relative;
+  width: 100%;
+}
+
+@media (max-width: 480px) {
+  .nav-container {
+    padding: 0 var(--spacing-md);
+  }
 }
 
 .nav-logo a {
@@ -950,6 +957,12 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
   gap: 2rem;
 }
 
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .nav-link {
   color: var(--text-secondary);
   text-decoration: none;
@@ -959,6 +972,7 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
   position: relative;
   padding: 0.5rem 0.75rem;
   border-radius: var(--radius-md);
+  display: inline-block;
 }
 
 .nav-link::after {
@@ -971,6 +985,7 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
   background: var(--accent-color);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   transform: translateX(-50%);
+  border-radius: 1px;
 }
 
 .nav-link:hover {
@@ -1005,7 +1020,6 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
   align-items: center;
   justify-content: center;
   border-radius: var(--radius-lg);
-  margin-left: 1rem;
 }
 
 .theme-toggle:hover {
@@ -1028,7 +1042,6 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
   cursor: pointer;
   gap: 4px;
   padding: 0.5rem;
-  margin-left: 1rem;
   border-radius: var(--radius-md);
   transition: all var(--transition-base);
 }
@@ -1059,10 +1072,21 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
 }
 
 /* Mobile Navigation */
+@media (max-width: 1024px) {
+  .nav-menu {
+    gap: 1.5rem;
+  }
+  
+  .nav-link {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.6rem;
+  }
+}
+
 @media (max-width: 768px) {
   .nav-menu {
     position: fixed;
-    top: 100%;
+    top: calc(100% + 1px);
     left: 0;
     right: 0;
     background: var(--bg-color);
@@ -1072,11 +1096,12 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
     padding: 2rem var(--spacing-lg);
     flex-direction: column;
     gap: 1.5rem;
-    transform: translateY(-100%);
+    transform: translateY(-100vh);
     opacity: 0;
     visibility: hidden;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    z-index: 999;
   }
 
   [data-theme="dark"] .nav-menu {
@@ -1088,6 +1113,11 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
     transform: translateY(0);
     opacity: 1;
     visibility: visible;
+  }
+
+  .hamburger {
+    display: flex;
+    order: 1;
   }
 
   .nav-link {
@@ -1115,8 +1145,16 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
     display: flex;
   }
 
+  .nav-controls {
+    order: 1;
+  }
+
+  .nav-menu {
+    order: 0;
+  }
+
   .theme-toggle {
-    order: -1;
+    margin-right: 0.5rem;
   }
 }
 
