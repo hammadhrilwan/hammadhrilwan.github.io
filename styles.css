@@ -115,10 +115,13 @@ body {
   color: var(--text-primary);
   transition: background-color var(--transition-base), color var(--transition-base);
   overflow-x: hidden;
+  overflow-y: auto; /* Explicitly allow vertical scrolling */
   /* Enhanced scrolling for better performance */
   -webkit-overflow-scrolling: touch;
   /* Remove tap highlights on mobile */
   -webkit-tap-highlight-color: transparent;
+  /* Ensure proper positioning */
+  position: relative;
 }
 
 /* Remove scroll-behavior from all elements - causes jank */
@@ -1549,10 +1552,12 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
 @media (max-width: 768px) {
   .hero {
     min-height: auto; /* Remove fixed viewport height on mobile */
-    padding: var(--spacing-lg) 0; /* Simple padding */
+    padding: 120px 0 var(--spacing-lg) 0; /* Increase top padding significantly */
     max-height: none; /* Ensure content can expand */
     overflow: visible; /* Ensure content is visible */
     display: block; /* Change from flex to block for better mobile flow */
+    position: relative; /* Ensure proper positioning */
+    top: 0; /* Reset any top positioning */
   }
   
   .hero-container {
@@ -1564,6 +1569,7 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative; /* Ensure proper positioning */
   }
   
   /* Hide ALL visual elements related to the code symbol */
@@ -1582,13 +1588,16 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
     padding: 0 !important;
   }
   
-  /* Ensure availability badge is visible on mobile */
+  /* Ensure availability badge is visible and scrollable on mobile */
   .availability-badge {
     display: inline-flex !important;
     visibility: visible !important;
     opacity: 1 !important;
     padding: 0.625rem 1rem;
     font-size: 0.8rem;
+    position: relative !important; /* Ensure it's in normal document flow */
+    z-index: 1; /* Keep it below navbar but visible */
+    margin-top: 20px; /* Add some top margin for breathing room */
   }
   
   .hero-actions {
@@ -1626,16 +1635,18 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
 
 @media (max-width: 480px) {
   .hero {
-    padding: var(--spacing-md) 0; /* Minimal padding */
+    padding: 100px 0 var(--spacing-md) 0; /* Ensure enough top padding for navbar */
     min-height: auto; /* Ensure no fixed height constraints */
     max-height: none; /* Ensure content can expand */
     overflow: visible; /* Allow all content to be visible */
+    position: relative; /* Ensure proper positioning */
   }
   
   .hero-container {
     padding: 0 1rem;
     overflow: visible; /* Allow content to be visible */
     gap: var(--spacing-sm); /* Smaller gap */
+    position: relative; /* Ensure proper positioning */
   }
   
   /* Ensure ALL visual elements are hidden on small mobile too */
