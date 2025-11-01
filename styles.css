@@ -1174,7 +1174,7 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
   position: relative;
   background: var(--bg-color);
   padding: var(--spacing-3xl) 0;
-  overflow: hidden;
+  overflow: visible; /* Allow content to be visible */
 }
 
 .hero-container {
@@ -1547,25 +1547,31 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
-  .hero-container {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-xl);
-    text-align: center;
-    padding: 0 var(--spacing-md);
-    overflow-x: hidden; /* Prevent horizontal scroll */
-  }
-  
   .hero {
     min-height: auto; /* Remove fixed viewport height on mobile */
-    padding: calc(var(--spacing-2xl) + 80px) 0 var(--spacing-2xl) 0; /* Increased top padding for navbar + safe area */
+    padding: calc(var(--spacing-xl) + 20px) 0 var(--spacing-xl) 0; /* Reduce top padding */
     max-height: none; /* Ensure content can expand */
+    overflow: visible; /* Ensure content is visible */
+    display: block; /* Change from flex to block for better mobile flow */
+  }
+  
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md); /* Reduce gap */
+    text-align: center;
+    padding: 0 var(--spacing-md);
+    overflow: visible; /* Allow content to be visible */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   
   .hero-visual {
     order: -1;
     width: 100%;
-    overflow: hidden; /* Prevent overflow */
-    margin-bottom: var(--spacing-md); /* Add space below avatar */
+    overflow: visible; /* Allow avatar to be fully visible */
+    margin-bottom: var(--spacing-sm); /* Reduce space below avatar */
+    flex-shrink: 0; /* Prevent shrinking */
   }
   
   .hero-avatar {
@@ -1574,6 +1580,7 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
     margin: 0 auto;
     max-width: 100px; /* Ensure it doesn't exceed container */
     position: relative; /* Ensure proper positioning */
+    flex-shrink: 0; /* Prevent shrinking */
   }
   
   .avatar-placeholder {
@@ -1614,15 +1621,17 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
 }
 
 @media (max-width: 480px) {
-  .hero-container {
-    padding: 0 1rem;
-    overflow-x: hidden; /* Prevent horizontal scroll */
-  }
-  
   .hero {
-    padding: calc(var(--spacing-lg) + 80px) 0 var(--spacing-lg) 0; /* Increased top padding for navbar + safe area */
+    padding: calc(var(--spacing-md) + 20px) 0 var(--spacing-md) 0; /* Minimal padding */
     min-height: auto; /* Ensure no fixed height constraints */
     max-height: none; /* Ensure content can expand */
+    overflow: visible; /* Allow all content to be visible */
+  }
+  
+  .hero-container {
+    padding: 0 1rem;
+    overflow: visible; /* Allow content to be visible */
+    gap: var(--spacing-sm); /* Smaller gap */
   }
   
   .availability-badge {
@@ -1679,6 +1688,15 @@ Uncomment the code below and comment out the hero-avatar styles above if you pre
   .hero-visual {
     order: -1;
     min-height: 0;
+  }
+}
+
+ALTERNATIVE 2: Move code symbol below text on mobile
+Uncomment the code below if you want the symbol to appear after the text on mobile
+
+@media (max-width: 768px) {
+  .hero-visual {
+    order: 1;
   }
 }
 */
