@@ -1582,6 +1582,15 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
     padding: 0 !important;
   }
   
+  /* Ensure availability badge is visible on mobile */
+  .availability-badge {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    padding: 0.625rem 1rem;
+    font-size: 0.8rem;
+  }
+  
   .hero-actions {
     flex-direction: column;
     align-items: stretch;
@@ -1644,6 +1653,9 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
   }
   
   .availability-badge {
+    display: inline-flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
     padding: 0.625rem 1rem;
     font-size: 0.8rem;
   }
