@@ -1555,10 +1555,17 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
     overflow-x: hidden; /* Prevent horizontal scroll */
   }
   
+  .hero {
+    min-height: auto; /* Remove fixed viewport height on mobile */
+    padding: calc(var(--spacing-2xl) + 80px) 0 var(--spacing-2xl) 0; /* Increased top padding for navbar + safe area */
+    max-height: none; /* Ensure content can expand */
+  }
+  
   .hero-visual {
     order: -1;
     width: 100%;
     overflow: hidden; /* Prevent overflow */
+    margin-bottom: var(--spacing-md); /* Add space below avatar */
   }
   
   .hero-avatar {
@@ -1566,6 +1573,7 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
     height: 100px;
     margin: 0 auto;
     max-width: 100px; /* Ensure it doesn't exceed container */
+    position: relative; /* Ensure proper positioning */
   }
   
   .avatar-placeholder {
@@ -1609,6 +1617,12 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
   .hero-container {
     padding: 0 1rem;
     overflow-x: hidden; /* Prevent horizontal scroll */
+  }
+  
+  .hero {
+    padding: calc(var(--spacing-lg) + 80px) 0 var(--spacing-lg) 0; /* Increased top padding for navbar + safe area */
+    min-height: auto; /* Ensure no fixed height constraints */
+    max-height: none; /* Ensure content can expand */
   }
   
   .availability-badge {
