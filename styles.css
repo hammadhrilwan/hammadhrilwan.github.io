@@ -1624,6 +1624,28 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
     gap: var(--spacing-sm);
   }
   
+  /* Fix social link icon positioning on mobile */
+  .hero-social .social-link {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 48px !important;
+    height: 48px !important;
+    padding: 0 !important;
+    font-size: 1.1rem !important;
+    border-radius: 12px !important;
+    background: var(--bg-secondary) !important;
+    border: 1px solid var(--border-color) !important;
+    text-align: center !important;
+  }
+  
+  .hero-social .social-link i {
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+    line-height: 1 !important;
+  }
+  
   .hero-greeting {
     font-size: 1.125rem;
   }
@@ -1690,6 +1712,26 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
     padding: 1rem 1.5rem;
     font-size: 0.95rem;
   }
+  
+  /* Fix social link icon positioning on small mobile */
+  .hero-social .social-link {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 44px !important;
+    height: 44px !important;
+    padding: 0 !important;
+    font-size: 1rem !important;
+    border-radius: 10px !important;
+    margin: 0 !important;
+  }
+  
+  .hero-social .social-link i {
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+    line-height: 1 !important;
+  }
 }
 
 /* Extra small mobile devices */
@@ -1708,6 +1750,24 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
   
   .hero-container {
     padding: 0 0.75rem;
+  }
+  
+  /* Fix social link icon positioning on extra small mobile */
+  .hero-social .social-link {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 40px !important;
+    height: 40px !important;
+    padding: 0 !important;
+    font-size: 0.9rem !important;
+    border-radius: 8px !important;
+  }
+  
+  .hero-social .social-link i {
+    margin: 0 !important;
+    padding: 0 !important;
+    line-height: 1 !important;
   }
 }
 
