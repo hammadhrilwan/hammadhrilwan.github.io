@@ -1646,6 +1646,23 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
     line-height: 1 !important;
   }
   
+  /* Fix scroll indicator positioning on mobile */
+  .scroll-indicator {
+    position: relative !important;
+    bottom: auto !important;
+    left: auto !important;
+    transform: none !important;
+    margin-top: var(--spacing-xl) !important;
+    margin-bottom: var(--spacing-lg) !important;
+    opacity: 1 !important;
+    animation: none !important;
+  }
+  
+  .scroll-text {
+    font-size: 0.7rem !important;
+    letter-spacing: 0.1em !important;
+  }
+  
   .hero-greeting {
     font-size: 1.125rem;
   }
@@ -1732,6 +1749,17 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
     display: block !important;
     line-height: 1 !important;
   }
+  
+  /* Fix scroll indicator positioning on small mobile */
+  .scroll-indicator {
+    position: relative !important;
+    margin-top: var(--spacing-lg) !important;
+    margin-bottom: var(--spacing-md) !important;
+  }
+  
+  .scroll-text {
+    font-size: 0.65rem !important;
+  }
 }
 
 /* Extra small mobile devices */
@@ -1768,6 +1796,16 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
     margin: 0 !important;
     padding: 0 !important;
     line-height: 1 !important;
+  }
+  
+  /* Fix scroll indicator positioning on extra small mobile */
+  .scroll-indicator {
+    margin-top: var(--spacing-md) !important;
+    margin-bottom: var(--spacing-sm) !important;
+  }
+  
+  .scroll-text {
+    font-size: 0.6rem !important;
   }
 }
 
