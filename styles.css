@@ -1566,16 +1566,20 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
     align-items: center;
   }
   
-  .hero-visual {
-    display: none; /* Hide the code symbol completely on mobile */
-  }
-  
-  .hero-avatar {
-    display: none; /* Hide the avatar completely on mobile */
-  }
-  
-  .avatar-placeholder {
-    font-size: 2.5rem; /* Smaller icon for mobile */
+  /* Hide ALL visual elements related to the code symbol */
+  .hero-visual,
+  .hero-avatar,
+  .avatar-placeholder,
+  .hero .hero-visual,
+  .hero .hero-avatar,
+  .hero .avatar-placeholder {
+    display: none !important; /* Hide the code symbol completely on mobile */
+    visibility: hidden !important; /* Double ensure it's hidden */
+    opacity: 0 !important; /* Triple ensure it's hidden */
+    width: 0 !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
   
   .hero-actions {
@@ -1625,12 +1629,18 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
     gap: var(--spacing-sm); /* Smaller gap */
   }
   
-  .hero-visual {
-    display: none; /* Keep hidden on small mobile too */
-  }
-  
-  .hero-avatar {
-    display: none; /* Keep hidden on small mobile too */
+  /* Ensure ALL visual elements are hidden on small mobile too */
+  .hero-visual,
+  .hero-avatar,
+  .avatar-placeholder,
+  .hero .hero-visual,
+  .hero .hero-avatar,
+  .hero .avatar-placeholder {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
   }
   
   .availability-badge {
@@ -1651,12 +1661,16 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
 
 /* Extra small mobile devices */
 @media (max-width: 320px) {
-  .hero-visual {
-    display: none; /* Keep hidden */
-  }
-  
-  .hero-avatar {
-    display: none; /* Keep hidden */
+  /* Ensure ALL visual elements are hidden on extra small mobile too */
+  .hero-visual,
+  .hero-avatar,
+  .avatar-placeholder,
+  .hero .hero-visual,
+  .hero .hero-avatar,
+  .hero .avatar-placeholder {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
   }
   
   .hero-container {
