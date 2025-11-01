@@ -1552,16 +1552,24 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
     gap: var(--spacing-xl);
     text-align: center;
     padding: 0 var(--spacing-md);
+    overflow-x: hidden; /* Prevent horizontal scroll */
   }
   
   .hero-visual {
     order: -1;
+    width: 100%;
+    overflow: hidden; /* Prevent overflow */
   }
   
   .hero-avatar {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     margin: 0 auto;
+    max-width: 100px; /* Ensure it doesn't exceed container */
+  }
+  
+  .avatar-placeholder {
+    font-size: 2.5rem; /* Smaller icon for mobile */
   }
   
   .hero-actions {
@@ -1600,6 +1608,7 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
 @media (max-width: 480px) {
   .hero-container {
     padding: 0 1rem;
+    overflow-x: hidden; /* Prevent horizontal scroll */
   }
   
   .availability-badge {
@@ -1616,7 +1625,49 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
     padding: 1rem 1.5rem;
     font-size: 0.95rem;
   }
+  
+  .hero-avatar {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto;
+  }
+  
+  .avatar-placeholder {
+    font-size: 2rem; /* Even smaller icon for very small screens */
+  }
 }
+
+/* Extra small mobile devices */
+@media (max-width: 320px) {
+  .hero-avatar {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .avatar-placeholder {
+    font-size: 1.75rem; /* Smallest icon size */
+  }
+  
+  .hero-container {
+    padding: 0 0.75rem;
+  }
+}
+
+/* 
+ALTERNATIVE: Hide code symbol completely on mobile devices
+Uncomment the code below and comment out the hero-avatar styles above if you prefer to hide the symbol entirely on mobile
+
+@media (max-width: 768px) {
+  .hero-avatar {
+    display: none;
+  }
+  
+  .hero-visual {
+    order: -1;
+    min-height: 0;
+  }
+}
+*/
 
 /* ===== ABOUT SECTION ===== */
 .about-content {
