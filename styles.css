@@ -979,19 +979,20 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
 
 .nav-link span {
   position: relative;
+  display: inline-block;
 }
 
-.nav-link span::after {
+.nav-link span::before {
   content: '';
   position: absolute;
-  bottom: -6px;
-  left: 50%;
   width: 0;
   height: 2px;
-  background: var(--accent-color);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  transform: translateX(-50%);
-  border-radius: 1px;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-color: var(--accent-color);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-link:hover {
@@ -999,8 +1000,8 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
   background: var(--bg-secondary);
 }
 
-.nav-link:hover span::after {
-  width: 30px;
+.nav-link:hover span::before {
+  width: 100%;
 }
 
 .nav-link.active {
@@ -1008,8 +1009,8 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
   background: var(--bg-tertiary);
 }
 
-.nav-link.active span::after {
-  width: 30px;
+.nav-link.active span::before {
+  width: 100%;
 }
 
 .theme-toggle {
@@ -1135,7 +1136,7 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
     border: 1px solid var(--border-color);
   }
 
-  .nav-link span::after {
+  .nav-link span::before {
     display: none;
   }
 
