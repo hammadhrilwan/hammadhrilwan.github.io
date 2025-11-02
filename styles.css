@@ -2275,8 +2275,8 @@ Uncomment the code below if you want the symbol to appear after the text on mobi
 }
 
 .tech-item:hover .tech-icon {
-  color: white;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  color: #000000; /* Black for light mode visibility */
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .tech-item span {
@@ -2288,7 +2288,18 @@ Uncomment the code below if you want the symbol to appear after the text on mobi
 }
 
 .tech-item:hover span {
-  color: white;
+  color: #000000; /* Black for light mode visibility */
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Dark mode overrides for tech-item hover */
+[data-theme="dark"] .tech-item:hover .tech-icon {
+  color: #ffffff; /* White for dark mode */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+[data-theme="dark"] .tech-item:hover span {
+  color: #ffffff; /* White for dark mode */
   text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
 }
 
@@ -2580,29 +2591,54 @@ Uncomment the code below if you want the symbol to appear after the text on mobi
 
 .tech-tag:hover {
   background: var(--accent-color);
-  color: var(--bg-color);
+  color: #000000 !important; /* Black text for light mode visibility */
   border-color: var(--accent-color);
 }
 
 /* Colorful Tech Tag Variations */
 .tech-tag:nth-child(4n+1):hover {
-  background: var(--purple-primary);
-  border-color: var(--purple-primary);
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: #000000 !important; /* Black text for light mode visibility */
 }
 
 .tech-tag:nth-child(4n+2):hover {
-  background: var(--green-primary);
-  border-color: var(--green-primary);
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
+  color: #ffffff !important; /* White text on dark background */
 }
 
 .tech-tag:nth-child(4n+3):hover {
-  background: var(--orange-primary);
-  border-color: var(--orange-primary);
+  background: var(--secondary-color);
+  border-color: var(--secondary-color);
+  color: #000000 !important; /* Black text for light mode visibility */
 }
 
 .tech-tag:nth-child(4n+4):hover {
-  background: var(--pink-primary);
-  border-color: var(--pink-primary);
+  background: var(--accent-light);
+  border-color: var(--accent-light);
+  color: #000000 !important; /* Black text on light background */
+}
+
+/* Dark mode tech tag styling */
+[data-theme="dark"] .tech-tag:hover {
+  color: #000000 !important; /* Black text in dark mode for better contrast */
+}
+
+[data-theme="dark"] .tech-tag:nth-child(4n+1):hover {
+  color: #000000 !important;
+}
+
+[data-theme="dark"] .tech-tag:nth-child(4n+2):hover {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .tech-tag:nth-child(4n+3):hover {
+  color: #000000 !important;
+}
+
+[data-theme="dark"] .tech-tag:nth-child(4n+4):hover {
+  color: #000000 !important;
 }
 
 .projects-cta {
@@ -3773,11 +3809,13 @@ div .primary-link:hover {
     font-size: 1rem;
     padding: 1rem 1.5rem;
     width: 100%;
-    max-width: 200px;
+    max-width: 280px; /* Increased from 200px to accommodate full text */
     margin: 0 auto;
     background-color: transparent;
     border: 2px solid var(--accent-color);
     color: var(--accent-color);
+    text-align: center; /* Center the text */
+    white-space: nowrap; /* Prevent text wrapping */
   }
   
   .social-link:hover {
@@ -4141,8 +4179,10 @@ div .primary-link:hover {
   .github-link,
   .social-link {
     min-height: 44px;
-    min-width: 44px;
+    min-width: 120px; /* Increased minimum width */
     padding: 0.75rem 1.5rem;
+    text-align: center;
+    white-space: nowrap;
   }
   
   /* Better spacing for small screens */
@@ -4184,6 +4224,8 @@ div .primary-link:hover {
   
   .social-links {
     gap: 1rem;
+    justify-content: center; /* Center the social links */
+    width: 100%;
   }
   
   /* Enhanced readability */
@@ -4831,4 +4873,104 @@ html[data-theme="dark"] .custom-cursor .cursor-dot,
 [data-theme="dark"] div.custom-cursor .cursor-dot {
   background: linear-gradient(135deg, var(--accent-light), var(--secondary-light)) !important;
   box-shadow: var(--shadow-light) !important;
+}
+
+/* ===== TECH TAG VISIBILITY FIXES ===== */
+/* High specificity overrides to ensure tech tag text is visible on hover */
+body .tech-tag:hover,
+html .tech-tag:hover,
+div .tech-tag:hover,
+.tech-tag:hover,
+span.tech-tag:hover {
+  color: #000000 !important; /* Black text for light mode visibility */
+  background: var(--accent-color) !important;
+}
+
+body .tech-tag:nth-child(4n+1):hover,
+html .tech-tag:nth-child(4n+1):hover,
+div .tech-tag:nth-child(4n+1):hover,
+span.tech-tag:nth-child(4n+1):hover {
+  color: #000000 !important; /* Black text for light mode */
+  background: var(--accent-color) !important;
+}
+
+body .tech-tag:nth-child(4n+2):hover,
+html .tech-tag:nth-child(4n+2):hover,
+div .tech-tag:nth-child(4n+2):hover,
+span.tech-tag:nth-child(4n+2):hover {
+  color: #ffffff !important; /* White text on dark background */
+  background: var(--accent-dark) !important;
+}
+
+body .tech-tag:nth-child(4n+3):hover,
+html .tech-tag:nth-child(4n+3):hover,
+div .tech-tag:nth-child(4n+3):hover,
+span.tech-tag:nth-child(4n+3):hover {
+  color: #000000 !important; /* Black text for light mode */
+  background: var(--secondary-color) !important;
+}
+
+body .tech-tag:nth-child(4n+4):hover,
+html .tech-tag:nth-child(4n+4):hover,
+div .tech-tag:nth-child(4n+4):hover,
+span.tech-tag:nth-child(4n+4):hover {
+  color: #000000 !important; /* Black text on light background */
+  background: var(--accent-light) !important;
+}
+
+/* Dark mode overrides */
+body[data-theme="dark"] .tech-tag:hover,
+html[data-theme="dark"] .tech-tag:hover,
+[data-theme="dark"] div .tech-tag:hover,
+[data-theme="dark"] span.tech-tag:hover {
+  color: #000000 !important;
+}
+
+body[data-theme="dark"] .tech-tag:nth-child(4n+2):hover,
+html[data-theme="dark"] .tech-tag:nth-child(4n+2):hover,
+[data-theme="dark"] div .tech-tag:nth-child(4n+2):hover,
+[data-theme="dark"] span.tech-tag:nth-child(4n+2):hover {
+  color: #ffffff !important;
+}
+
+/* ===== ULTIMATE TECH TAG FIX ===== */
+/* Nuclear option - maximum specificity for tech tag visibility */
+html body .project-tech span.tech-tag:hover,
+body .project-tech span.tech-tag:hover,
+.project-tech span.tech-tag:hover,
+div.project-tech span.tech-tag:hover {
+  color: #000000 !important; /* BLACK text for light mode visibility */
+  background-color: var(--accent-color) !important;
+  text-shadow: none !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Specific fixes for each position */
+html body .project-tech span.tech-tag:nth-child(1):hover,
+html body .project-tech span.tech-tag:nth-child(2):hover,
+html body .project-tech span.tech-tag:nth-child(3):hover,
+html body .project-tech span.tech-tag:nth-child(4):hover {
+  color: #000000 !important; /* BLACK text for light mode */
+  background-color: var(--accent-color) !important;
+}
+
+/* CSS3 is typically 4th child - specific override */
+html body .project-tech span.tech-tag:nth-child(4):hover {
+  color: #000000 !important; /* BLACK text for light mode */
+  background-color: var(--secondary-color) !important;
+  text-shadow: none !important;
+}
+
+/* Light mode explicit overrides */
+html:not([data-theme="dark"]) body .project-tech span.tech-tag:hover,
+html:not([data-theme="dark"]) .project-tech span.tech-tag:hover {
+  color: #000000 !important; /* BLACK text for light mode */
+  background-color: var(--accent-color) !important;
+}
+
+/* Dark mode nuclear option */
+html[data-theme="dark"] body .project-tech span.tech-tag:hover {
+  color: #ffffff !important; /* WHITE text for dark mode */
+  background-color: var(--accent-color) !important;
 }
