@@ -3,28 +3,41 @@
 
 /* ===== CSS VARIABLES ===== */
 :root {
-  /* Diego-inspired Minimal Color Palette */
-  --primary-color: #000000;        /* Pure black */
+  /* Minimalistic Cool Palette - Refined & Modern */
+  --primary-color: #1a1a1a;        /* Near black for better readability */
   --primary-dark: #000000;         
-  --primary-light: #333333;        
-  --secondary-color: #666666;      /* Medium gray */
-  --accent-color: #BCBC82;         /* Beautiful sage accent */
-  --accent-light: #CDD29A;        /* Lighter sage */
-  --accent-dark: #A6A66A;          /* Darker sage */
-  --warning-color: #000000;        /* Black for consistency */
+  --primary-light: #4a4a4a;        
+  --secondary-color: #6b7280;      /* Cool gray */
   
-  /* Background Colors - Light Theme */
+  /* Simplified Blue Hierarchy - Better Contrast for Light Mode */
+  --accent-color: #0891b2;         /* Dark cyan (primary) - better contrast */
+  --accent-light: #06b6d4;        /* Medium cyan (secondary) */
+  --accent-dark: #0e7490;          /* Deep cyan (emphasis) */
+  --accent-subtle: #f0fdff;       /* Pastel snow background */
+  
+  /* Cohesive Contrast Palette - Aqua/Cyan Theme for Light Mode */
+  --purple-primary: #06b6d4;      /* Medium cyan */
+  --purple-light: #0891b2;        /* Dark cyan */
+  --green-primary: #0891b2;       /* Dark cyan */
+  --green-light: #06b6d4;         /* Medium cyan */
+  --orange-primary: #0e7490;      /* Deep cyan */
+  --orange-light: #0891b2;        /* Dark cyan */
+  --pink-primary: #155e75;        /* Very deep cyan */
+  --pink-light: #0e7490;          /* Deep cyan */
+  
+  /* Neutral Foundation */
   --bg-color: #ffffff;             /* Pure white */
-  --bg-secondary: #fafafa;         /* Very light gray */
-  --bg-tertiary: #f5f5f5;          /* Light gray */
-  --text-primary: #000000;         /* Pure black */
-  --text-secondary: #666666;       /* Medium gray */
-  --text-muted: #999999;           /* Light gray */
+  --bg-secondary: #f8fafc;         /* Subtle off-white */
+  --bg-tertiary: #f1f5f9;          /* Light gray-blue */
+  --text-primary: #1a1a1a;         /* Near black */
+  --text-secondary: #64748b;       /* Muted blue-gray */
+  --text-muted: #94a3b8;           /* Light blue-gray */
   
-  /* Border & Effects - Minimal */
-  --border-color: #e0e0e0;
-  --shadow-light: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
-  --shadow-medium: 0 2px 8px 0 rgba(0, 0, 0, 0.1);
+  /* Minimal Effects with Better Contrast Cyan Tints */
+  --border-color: #e2e8f0;         /* Light blue-gray border */
+  --shadow-light: 0 1px 3px 0 rgba(8, 145, 178, 0.15);    /* Dark cyan shadows */
+  --shadow-medium: 0 4px 12px 0 rgba(8, 145, 178, 0.18);
+  --shadow-large: 0 8px 25px 0 rgba(8, 145, 178, 0.22);
   --shadow-large: 0 4px 16px 0 rgba(0, 0, 0, 0.1);
   --shadow-artistic: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
   
@@ -74,31 +87,42 @@
   --transition-slow: 0.5s ease;
 }
 
-/* Dark Theme - Diego Style */
+/* Dark Theme - Modern Minimalistic */
 [data-theme="dark"] {
-  --primary-color: #ffffff;        /* White for dark theme */
+  --primary-color: #f8fafc;        /* Near white for dark theme */
   --primary-dark: #ffffff;         
-  --primary-light: #cccccc;        
-  --secondary-color: #999999;      /* Medium gray */
-  --accent-color: #CDD29A;         /* Bright sage for dark theme */
-  --accent-light: #D4D9A8;        /* Lighter sage */
-  --accent-dark: #BCBC82;          /* Darker sage */
-  --warning-color: #ffffff;        /* White for consistency */
+  --primary-light: #cbd5e1;        
+  --secondary-color: #64748b;      /* Cool gray */
   
-  /* Dark Background Colors */
+  /* Refined Soft Aqua/Cyan for Dark Mode */
+  --accent-color: #67e8f9;         /* Pastel cyan for dark mode */
+  --accent-light: #a5f3fc;        /* Pastel sky */
+  --accent-dark: #06b6d4;          /* Medium cyan */
+  --accent-subtle: #000000;       /* Pure black background */
+  
+  /* Cohesive Pastel Palette for Dark Mode - Aqua/Cyan/Sky/Snow */
+  --purple-primary: #a5f3fc;      /* Pastel sky for dark */
+  --purple-light: #cffafe;        /* Very light cyan */
+  --green-primary: #67e8f9;       /* Pastel cyan for dark */
+  --green-light: #a5f3fc;         /* Pastel sky */
+  --orange-primary: #67e8f9;      /* Pastel cyan for dark */
+  --orange-light: #a5f3fc;        /* Pastel sky */
+  --pink-primary: #06b6d4;        /* Medium cyan for dark */
+  --pink-light: #67e8f9;          /* Pastel cyan */
+  
+  /* Dark Backgrounds */
   --bg-color: #000000;             /* Pure black */
-  --bg-secondary: #111111;         /* Very dark gray */
-  --bg-tertiary: #1a1a1a;          /* Dark gray */
-  --text-primary: #ffffff;         /* Pure white */
-  --text-secondary: #999999;       /* Medium gray */
-  --text-muted: #666666;           /* Darker gray */
+  --bg-secondary: #1a1a1a;         /* Very dark gray */
+  --bg-tertiary: #262626;          /* Dark gray */
+  --text-primary: #f8fafc;         /* Near white */
+  --text-secondary: #94a3b8;       /* Medium slate */
+  --text-muted: #64748b;           /* Dark slate */
   
-  /* Dark Border & Effects */
-  --border-color: #333333;
-  --shadow-light: 0 1px 3px 0 rgba(255, 255, 255, 0.05);
-  --shadow-medium: 0 2px 8px 0 rgba(255, 255, 255, 0.1);
-  --shadow-large: 0 4px 16px 0 rgba(255, 255, 255, 0.1);
-  --shadow-artistic: 0 8px 32px 0 rgba(255, 255, 255, 0.1);
+  /* Dark Effects with Soft Pastel Cyan Tints */
+  --border-color: #262626;         /* Dark gray border */
+  --shadow-light: 0 1px 3px 0 rgba(103, 232, 249, 0.20);   /* Pastel cyan shadows for dark */
+  --shadow-medium: 0 4px 12px 0 rgba(103, 232, 249, 0.25);
+  --shadow-large: 0 8px 25px 0 rgba(103, 232, 249, 0.30);
   
   /* GitHub Contribution Colors - Dark Theme */
   --github-level-0: #161b22;
@@ -156,16 +180,34 @@ body {
   height: 20px;
   pointer-events: none;
   z-index: 9999;
-  mix-blend-mode: difference;
+  mix-blend-mode: normal; /* Changed from 'difference' to 'normal' to show true colors */
   transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .cursor-dot {
   width: 100%;
   height: 100%;
-  background: var(--accent-color);
+  background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
   border-radius: 50%;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0.8;
+}
+
+/* Dark mode cursor */
+[data-theme="dark"] .cursor-dot {
+  background: linear-gradient(135deg, var(--accent-light), var(--secondary-light));
+  opacity: 0.9;
+}
+
+/* Additional override for any possible conflicting styles */
+.custom-cursor .cursor-dot {
+  background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+  box-shadow: var(--shadow-light);
+}
+
+[data-theme="dark"] .custom-cursor .cursor-dot {
+  background: linear-gradient(135deg, var(--accent-light), var(--secondary-light));
+  box-shadow: var(--shadow-light);
 }
 
 .custom-cursor.cursor-hover {
@@ -173,8 +215,9 @@ body {
 }
 
 .custom-cursor.cursor-hover .cursor-dot {
-  background: var(--text-primary);
+  background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
   opacity: 0.8;
+  box-shadow: var(--shadow-medium);
 }
 
 @media (max-width: 768px) {
@@ -286,25 +329,9 @@ section, .hero-content {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Enhanced Social Links */
+/* Clean Social Links without shimmer effects */
 .social-link, .hero-social a {
   position: relative;
-  overflow: hidden;
-}
-
-.social-link::after, .hero-social a::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-  transition: left 0.5s;
-}
-
-.social-link:hover::after, .hero-social a:hover::after {
-  left: 100%;
 }
 
 /* Loading Screen */
@@ -475,7 +502,7 @@ section, .hero-content {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(188, 188, 130, 0.1), transparent);
+  background: linear-gradient(90deg, transparent, rgba(27, 54, 93, 0.12), transparent);
   transition: left 0.5s;
 }
 
@@ -485,7 +512,7 @@ section, .hero-content {
 
 .cyberpunk-card:hover {
   border-color: var(--primary-color);
-  box-shadow: 0 0 25px rgba(188, 188, 130, 0.3);
+  box-shadow: 0 0 25px rgba(74, 144, 184, 0.45);
   transform: translateY(-5px);
 }
 
@@ -851,7 +878,6 @@ a {
 
 a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover {
   color: var(--primary-color);
-  text-shadow: 0 0 8px rgba(188, 188, 130, 0.6);
 }
 
 /* Cyberpunk Link Underline Effect */
@@ -877,26 +903,95 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
 }
 
 .btn-primary {
-  background-color: var(--primary-color);
+  background: var(--accent-color);
   color: white;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-base);
 }
 
 .btn-primary:hover {
-  background-color: var(--primary-dark);
-  transform: translateY(-2px);
+  background: var(--accent-dark);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-medium);
+}
+
+/* Colorful Button Variations */
+.btn-purple {
+  background: var(--purple-primary);
+  color: white;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-base);
+}
+
+.btn-purple:hover {
+  background: var(--purple-light);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-medium);
+}
+
+.btn-green {
+  background: var(--green-primary);
+  color: white;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-base);
+}
+
+.btn-green:hover {
+  background: var(--green-light);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-medium);
+}
+
+.btn-orange {
+  background: var(--orange-primary);
+  color: white;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--transition-base);
+}
+
+.btn-orange:hover {
+  background: var(--orange-light);
+  transform: translateY(-1px);
   box-shadow: var(--shadow-medium);
 }
 
 .btn-secondary {
-  background-color: transparent;
+  background: linear-gradient(135deg, transparent, rgba(27, 54, 93, 0.05), rgba(255, 255, 255, 0.02), transparent);
   color: var(--primary-color);
-  border-color: var(--primary-color);
+  border: 2px solid;
+  border-image: linear-gradient(135deg, #1B365D, #4A90B8, #2E5984) 1;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-secondary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(74, 144, 184, 0.1), rgba(255, 255, 255, 0.05), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-secondary:hover::before {
+  left: 100%;
 }
 
 .btn-secondary:hover {
-  background-color: var(--primary-color);
+  background: linear-gradient(135deg, #1B365D, #4A90B8, rgba(255, 255, 255, 0.15), #2E5984);
   color: white;
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(27, 54, 93, 0.3);
 }
 
 /* ===== NAVIGATION - DIEGO STYLE ===== */
@@ -1015,6 +1110,27 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
 .nav-link:hover {
   color: var(--text-primary);
   background: var(--bg-secondary);
+}
+
+/* Colorful Nav Link Variations */
+.nav-link[href="#about"]:hover span::before {
+  background-color: var(--purple-primary);
+}
+
+.nav-link[href="#projects"]:hover span::before {
+  background-color: var(--green-primary);
+}
+
+.nav-link[href="#experience"]:hover span::before {
+  background-color: var(--orange-primary);
+}
+
+.nav-link[href="#education"]:hover span::before {
+  background-color: var(--pink-primary);
+}
+
+.nav-link[href="#contact"]:hover span::before {
+  background-color: var(--accent-color);
 }
 
 .nav-link:hover span::before {
@@ -1352,11 +1468,11 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
 
 .cta-primary {
   background: var(--accent-color);
-  color: #000000;
+  color: #ffffff !important;  /* White text for light mode */
   padding: 1rem 2rem;
   border-radius: var(--radius-lg);
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;  /* Made bolder for better readability */
   font-size: var(--font-size-base);
   transition: all var(--transition-base);
   position: relative;
@@ -1367,8 +1483,9 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
 .cta-primary:hover {
   background: var(--accent-dark);
   border-color: var(--accent-dark);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-large);
+  color: #ffffff !important;  /* White text on darker hover state */
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-medium);
 }
 
 .cta-primary::before {
@@ -1384,6 +1501,46 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
 
 .cta-primary:hover::before {
   left: 100%;
+}
+
+/* Additional override to ensure cta-primary text has white color in light mode */
+body .cta-primary,
+html .cta-primary,
+.cta-primary,
+div .cta-primary,
+a.cta-primary {
+  color: #ffffff !important;  /* White text for light mode */
+  background: var(--accent-color) !important;
+  font-weight: 600 !important;
+}
+
+body .cta-primary:hover,
+html .cta-primary:hover,
+.cta-primary:hover,
+div .cta-primary:hover,
+a.cta-primary:hover {
+  color: #ffffff !important;  /* White text on darker hover background */
+  background: var(--accent-dark) !important;
+}
+
+/* Dark mode specific styling for cta-primary button */
+[data-theme="dark"] .cta-primary,
+[data-theme="dark"] body .cta-primary,
+[data-theme="dark"] html .cta-primary,
+[data-theme="dark"] div .cta-primary,
+[data-theme="dark"] a.cta-primary {
+  color: #000000 !important;  /* Black text for dark mode */
+  background: var(--accent-color) !important;
+  font-weight: 600 !important;
+}
+
+[data-theme="dark"] .cta-primary:hover,
+[data-theme="dark"] body .cta-primary:hover,
+[data-theme="dark"] html .cta-primary:hover,
+[data-theme="dark"] div .cta-primary:hover,
+[data-theme="dark"] a.cta-primary:hover {
+  color: #000000 !important;  /* Black text on hover in dark mode */
+  background: var(--accent-light) !important;
 }
 
 .cta-secondary {
@@ -1422,13 +1579,37 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
   border-radius: var(--radius-md);
   background: var(--bg-secondary);
   border: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
 }
 
 .social-link:hover {
-  color: var(--text-primary);
-  transform: translateY(-2px);
-  background: var(--bg-tertiary);
-  border-color: var(--text-primary);
+  color: var(--accent-color);
+  transform: translateY(-1px);
+  background: var(--accent-subtle);
+  border-color: var(--accent-color);
+  box-shadow: var(--shadow-light);
+}
+
+/* Colorful Social Link Variations */
+.social-link[href*="linkedin"]:hover {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.social-link[href*="github"]:hover {
+  color: var(--purple-primary);
+  border-color: var(--purple-primary);
+}
+
+.social-link[href*="twitter"]:hover {
+  color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.social-link[href*="instagram"]:hover {
+  color: var(--pink-primary);
+  border-color: var(--pink-primary);
 }
 
 /* Hero Avatar */
@@ -1444,6 +1625,8 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
   width: 100%;
   height: 100%;
   background: linear-gradient(135deg, var(--accent-color), var(--accent-light));
+  background-size: 200% 200%;
+  animation: subtleGradientShift 6s ease-in-out infinite;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1452,6 +1635,13 @@ a:not(.primary-link):not(.btn):not([class*="button"]):not(.project-link):hover::
   color: var(--bg-color);
   position: relative;
   overflow: hidden;
+  box-shadow: var(--shadow-medium);
+}
+
+@keyframes subtleGradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .avatar-placeholder::before {
@@ -2035,43 +2225,71 @@ Uncomment the code below if you want the symbol to appear after the text on mobi
   align-items: center;
   gap: 0.75rem;
   padding: 1.5rem 1rem;
-  background: var(--bg-secondary);
+  background: linear-gradient(135deg, var(--bg-secondary), rgba(74, 144, 184, 0.08), rgba(255, 255, 255, 0.02), var(--bg-secondary));
   border-radius: 12px;
   transition: all 0.3s ease;
   cursor: pointer;
   border: 1px solid transparent;
+  position: relative;
+  overflow: hidden;
   /* Remove blue tap highlight on mobile */
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   touch-action: manipulation;
 }
 
+.tech-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(74, 144, 184, 0.15), rgba(255, 255, 255, 0.1), rgba(74, 144, 184, 0.15), transparent);
+  transition: left 0.6s ease;
+  z-index: 0;
+}
+
+.tech-item:hover::before {
+  left: 100%;
+}
+
 .tech-item:hover {
   transform: translateY(-4px);
-  border-color: rgba(188, 188, 130, 0.2);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  background: rgba(188, 188, 130, 0.05);
+  border-color: var(--accent-color);
+  box-shadow: var(--shadow-medium);
+  background: var(--bg-secondary);
 }
 
 [data-theme="dark"] .tech-item:hover {
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-  background: rgba(188, 188, 130, 0.1);
+  box-shadow: var(--shadow-medium);
+  background: var(--bg-secondary);
 }
 
 .tech-icon {
   font-size: 2rem;
   color: var(--text-secondary);
   transition: color 0.3s ease;
+  position: relative;
+  z-index: 1;
 }
 
 .tech-item:hover .tech-icon {
-  color: var(--accent-color);
+  color: white;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
 .tech-item span {
   font-size: 0.875rem;
   font-weight: 500;
   color: var(--text-primary);
+  position: relative;
+  z-index: 1;
+}
+
+.tech-item:hover span {
+  color: white;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
 }
 
 @media (max-width: 768px) {
@@ -2315,6 +2533,27 @@ Uncomment the code below if you want the symbol to appear after the text on mobi
   text-align: center;
 }
 
+/* Colorful Feature Icon Variations */
+.feature-item:nth-child(1) i {
+  color: var(--purple-primary);
+}
+
+.feature-item:nth-child(2) i {
+  color: var(--green-primary);
+}
+
+.feature-item:nth-child(3) i {
+  color: var(--orange-primary);
+}
+
+.feature-item:nth-child(4) i {
+  color: var(--pink-primary);
+}
+
+.feature-item:nth-child(5) i {
+  color: var(--accent-color);
+}
+
 .feature-item span {
   font-size: 0.875rem;
   color: var(--text-secondary);
@@ -2343,6 +2582,27 @@ Uncomment the code below if you want the symbol to appear after the text on mobi
   background: var(--accent-color);
   color: var(--bg-color);
   border-color: var(--accent-color);
+}
+
+/* Colorful Tech Tag Variations */
+.tech-tag:nth-child(4n+1):hover {
+  background: var(--purple-primary);
+  border-color: var(--purple-primary);
+}
+
+.tech-tag:nth-child(4n+2):hover {
+  background: var(--green-primary);
+  border-color: var(--green-primary);
+}
+
+.tech-tag:nth-child(4n+3):hover {
+  background: var(--orange-primary);
+  border-color: var(--orange-primary);
+}
+
+.tech-tag:nth-child(4n+4):hover {
+  background: var(--pink-primary);
+  border-color: var(--pink-primary);
 }
 
 .projects-cta {
@@ -2453,10 +2713,10 @@ Uncomment the code below if you want the symbol to appear after the text on mobi
 
 .project-item:hover {
   transform: translateY(-8px);
-  border-color: rgba(188, 188, 130, 0.2);
+  border-color: rgba(74, 144, 184, 0.35);
   box-shadow: 
     0 20px 40px rgba(0, 0, 0, 0.1),
-    0 0 0 1px rgba(188, 188, 130, 0.1);
+    0 0 0 1px rgba(27, 54, 93, 0.3);
 }
 
 .project-item:hover::before {
@@ -2466,7 +2726,7 @@ Uncomment the code below if you want the symbol to appear after the text on mobi
 [data-theme="dark"] .project-item:hover {
   box-shadow: 
     0 20px 40px rgba(0, 0, 0, 0.3),
-    0 0 0 1px rgba(188, 188, 130, 0.2);
+    0 0 0 1px rgba(74, 144, 184, 0.4);
 }
 
 .project-image {
@@ -2522,14 +2782,14 @@ Uncomment the code below if you want the symbol to appear after the text on mobi
   gap: 1.5rem;
   margin: 1.5rem 0;
   padding: 1.5rem;
-  background: rgba(188, 188, 130, 0.03);
+  background: rgba(27, 54, 93, 0.06);
   border-radius: 8px;
-  border: 1px solid rgba(188, 188, 130, 0.1);
+  border: 1px solid rgba(74, 144, 184, 0.2);
 }
 
 [data-theme="dark"] .project-highlights {
-  background: rgba(188, 188, 130, 0.05);
-  border-color: rgba(188, 188, 130, 0.15);
+  background: rgba(15, 42, 68, 0.12);
+  border-color: rgba(74, 144, 184, 0.3);
 }
 
 .highlight-item h4 {
@@ -2651,19 +2911,19 @@ Uncomment the code below if you want the symbol to appear after the text on mobi
   left: -100%;
   width: 100%;
   height: 100%;
-  background: black !important;
+  background: var(--accent-color) !important;
   transition: left 0.3s ease !important;
   z-index: 0;
 }
 
-/* Light mode explicit - black background */
+/* Light mode explicit - teal background */
 html:not([data-theme="dark"]) .projects .project-links .project-link::before {
-  background: black !important;
+  background: var(--accent-color) !important;
 }
 
-/* Dark mode - grey background with black text */
+/* Dark mode - teal background with black text */
 [data-theme="dark"] .projects .project-links .project-link::before {
-  background: #e5e7eb !important;
+  background: var(--accent-color) !important;
 }
 
 .projects .project-links .project-link:hover::before {
@@ -2671,30 +2931,33 @@ html:not([data-theme="dark"]) .projects .project-links .project-link::before {
 }
 
 .projects .project-links .project-link:hover {
-  color: white !important;
-  border-color: var(--primary-color) !important;
+  background-color: var(--accent-color) !important;
+  color: black !important;
+  border-color: var(--accent-color) !important;
 }
 /* END TEMPORARILY DISABLED TO FIX BUTTON VISIBILITY */
 
 .projects .project-links .project-link:hover span,
 .projects .project-links .project-link:hover i {
-  color: white !important;
+  color: black !important;
   position: relative;
   z-index: 1;
 }
 
-/* Light mode explicit - white text on black background */
+/* Light mode explicit - black text on teal background */
 html:not([data-theme="dark"]) .projects .project-links .project-link:hover {
-  color: white !important;
+  background-color: var(--accent-color) !important;
+  color: black !important;
 }
 
 html:not([data-theme="dark"]) .projects .project-links .project-link:hover span,
 html:not([data-theme="dark"]) .projects .project-links .project-link:hover i {
-  color: white !important;
+  color: black !important;
 }
 
-/* Dark mode - black text on grey background */
+/* Dark mode - black text on teal background */
 [data-theme="dark"] .projects .project-links .project-link:hover {
+  background-color: var(--accent-color) !important;
   color: black !important;
 }
 
@@ -2711,33 +2974,33 @@ html:not([data-theme="dark"]) .projects .project-links .project-link:hover i {
 
 /* Additional fallback styles for button hover */
 div.project-links a.project-link:hover {
-  background-color: black !important;
-  color: white !important;
+  background-color: var(--accent-color) !important;
+  color: black !important;
 }
 
 div.project-links a.project-link:hover span {
-  color: white !important;
+  color: black !important;
 }
 
 div.project-links a.project-link:hover i {
-  color: white !important;
+  color: black !important;
 }
 
 /* Light mode explicit fallbacks */
 html:not([data-theme="dark"]) div.project-links a.project-link:hover {
-  background-color: black !important;
-  color: white !important;
+  background-color: var(--accent-color) !important;
+  color: black !important;
 }
 
 html:not([data-theme="dark"]) div.project-links a.project-link:hover span,
 html:not([data-theme="dark"]) div.project-links a.project-link:hover i {
-  color: white !important;
+  color: black !important;
 }
 
 /* Dark mode specific button hover styles */
 [data-theme="dark"] .projects .project-links .project-link:hover,
 [data-theme="dark"] div.project-links a.project-link:hover {
-  background-color: #e5e7eb !important;
+  background-color: var(--accent-color) !important;
   color: black !important;
 }
 
@@ -3093,7 +3356,7 @@ html:not([data-theme="dark"]) .project-item .project-links a.project-link:hover 
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(188, 188, 130, 0.03), rgba(188, 188, 130, 0.01));
+  background: linear-gradient(135deg, rgba(27, 54, 93, 0.06), rgba(74, 144, 184, 0.03));
   opacity: 0;
   transition: opacity 0.4s ease;
   pointer-events: none;
@@ -3101,7 +3364,7 @@ html:not([data-theme="dark"]) .project-item .project-links a.project-link:hover 
 
 .article-item:hover {
   transform: translateY(-4px);
-  border-color: rgba(188, 188, 130, 0.2);
+  border-color: rgba(74, 144, 184, 0.35);
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
 }
 
@@ -3159,7 +3422,7 @@ html:not([data-theme="dark"]) .project-item .project-links a.project-link:hover 
 }
 
 .tag {
-  background: rgba(188, 188, 130, 0.1);
+  background: rgba(30, 64, 175, 0.12);
   color: var(--accent-color);
   padding: 0.25rem 0.75rem;
   border-radius: 12px;
@@ -3168,7 +3431,7 @@ html:not([data-theme="dark"]) .project-item .project-links a.project-link:hover 
 }
 
 [data-theme="dark"] .tag {
-  background: rgba(188, 188, 130, 0.2);
+  background: rgba(30, 58, 138, 0.25);
 }
 
 .article-footer {
@@ -3281,7 +3544,7 @@ html:not([data-theme="dark"]) .project-item .project-links a.project-link:hover 
   display: inline-block;
   padding: 1rem 2.5rem;
   background-color: var(--accent-color);
-  color: #000000;  /* Changed to black for better contrast */
+  color: #ffffff !important;  /* Force white text with !important for better contrast against blue background */
   text-decoration: none;
   border-radius: 50px;
   font-weight: 600;  /* Made text bolder */
@@ -3290,6 +3553,22 @@ html:not([data-theme="dark"]) .project-item .project-links a.project-link:hover 
   border: none;
   cursor: pointer;
   position: relative;
+  min-height: 44px; /* Minimum touch target size */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Added for shimmer effect */
+}
+
+.primary-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s;
 }
 
 .primary-link::after {
@@ -3297,10 +3576,35 @@ html:not([data-theme="dark"]) .project-item .project-links a.project-link:hover 
 }
 
 .primary-link:hover {
-  background-color: var(--accent-dark);
-  color: #000000;  /* Ensure text stays black on hover */
+  background: var(--accent-dark);
+  color: #ffffff !important;  /* White text on darker background for light mode */
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px rgba(188, 188, 130, 0.3);
+  box-shadow: var(--shadow-large);
+}
+
+.primary-link:hover::before {
+  left: 100%;
+}
+
+/* Dark mode specific styling for primary-link button */
+[data-theme="dark"] .primary-link,
+[data-theme="dark"] body .primary-link,
+[data-theme="dark"] html .primary-link,
+[data-theme="dark"] div .primary-link,
+[data-theme="dark"] a.primary-link {
+  color: #000000 !important;  /* Black text for dark mode */
+  background-color: var(--accent-color) !important;
+  font-weight: 600 !important;
+  text-shadow: none !important; /* Remove text shadow for better contrast */
+}
+
+[data-theme="dark"] .primary-link:hover,
+[data-theme="dark"] body .primary-link:hover,
+[data-theme="dark"] html .primary-link:hover,
+[data-theme="dark"] div .primary-link:hover,
+[data-theme="dark"] a.primary-link:hover {
+  color: #000000 !important;  /* Black text on hover in dark mode */
+  background-color: var(--accent-light) !important;
 }
 
 .social-links {
@@ -3310,40 +3614,73 @@ html:not([data-theme="dark"]) .project-item .project-links a.project-link:hover 
 }
 
 .social-link {
-  color: var(--text-secondary);
+  color: var(--accent-color);
   text-decoration: none;
-  font-weight: 400;
+  font-weight: 500;
   font-size: 1rem;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
   position: relative;
+  display: inline-block;
+  min-height: 44px; /* Minimum touch target size for mobile */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  background: linear-gradient(135deg, transparent, rgba(27, 54, 93, 0.05), rgba(255, 255, 255, 0.02), transparent);
+  border: 2px solid var(--accent-color);
+  overflow: hidden;
+}
+
+.social-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(74, 144, 184, 0.1), rgba(255, 255, 255, 0.08), rgba(74, 144, 184, 0.1), transparent);
+  transition: left 0.5s ease;
+  z-index: 0;
+}
+
+.social-link:hover::before {
+  left: 100%;
 }
 
 .social-link:hover {
-  color: var(--accent-color);
+  color: white;
+  background: linear-gradient(135deg, #1B365D, #4A90B8, rgba(255, 255, 255, 0.15), #2E5984);
+  border-color: #4A90B8;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(27, 54, 93, 0.35), 0 0 15px rgba(74, 144, 184, 0.3);
 }
 
-.social-link::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background-color: var(--accent-color);
-  transition: width 0.3s ease;
-}
 
-.social-link:hover::after {
-  width: 100%;
-}
 
 /* Dark theme styles for primary-link */
 [data-theme="dark"] .primary-link {
-  color: #000000;  /* Keep black text for good contrast against sage green */
+  color: #ffffff !important;  /* Force white text for contrast against dark blue background */
 }
 
 [data-theme="dark"] .primary-link:hover {
-  color: #000000;  /* Ensure text stays black on hover in dark mode */
+  color: #ffffff !important;  /* Keep white text on hover in dark mode */
+}
+
+/* Additional override to ensure primary-link text is always visible */
+body .primary-link,
+html .primary-link,
+.primary-link,
+div .primary-link {
+  color: #ffffff !important;
+  background-color: var(--accent-color) !important;
+}
+
+body .primary-link:hover,
+html .primary-link:hover,
+.primary-link:hover,
+div .primary-link:hover {
+  color: #ffffff !important;
 }
 
 /* Mobile responsiveness */
@@ -3360,9 +3697,93 @@ html:not([data-theme="dark"]) .project-item .project-links a.project-link:hover 
     font-size: 1.1rem;
   }
   
+  .contact-links {
+    gap: 2.5rem;
+  }
+  
+  .primary-link {
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+  }
+  
+  .social-links {
+    flex-direction: row;
+    gap: 3rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .social-link {
+    font-size: 1.1rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    background-color: transparent;
+    border: 2px solid var(--accent-color);
+    transition: all 0.3s ease;
+    min-width: 100px;
+    text-align: center;
+    color: var(--accent-color);
+  }
+  
+  .social-link:hover {
+    background-color: transparent;
+    border-color: var(--accent-dark);
+    color: var(--accent-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(30, 58, 138, 0.3);
+  }
+}
+
+@media (max-width: 480px) {
+  .contact {
+    padding: 4rem 1rem;
+  }
+  
+  .contact .section-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .contact-description {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .contact-links {
+    gap: 2rem;
+  }
+  
+  .primary-link {
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    width: 100%;
+    max-width: 250px;
+  }
+  
   .social-links {
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1rem;
+    width: 100%;
+  }
+  
+  .social-link {
+    font-size: 1rem;
+    padding: 1rem 1.5rem;
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+    background-color: transparent;
+    border: 2px solid var(--accent-color);
+    color: var(--accent-color);
+  }
+  
+  .social-link:hover {
+    background-color: transparent;
+    border-color: var(--accent-dark);
+    color: var(--accent-dark);
   }
 }
 
@@ -3774,17 +4195,17 @@ html:not([data-theme="dark"]) .project-item .project-links a.project-link:hover 
 /* ==== FINAL OVERRIDE FOR PROJECT BUTTONS ==== */
 /* These styles are placed at the end to ensure maximum specificity */
 
-/* Light mode - BLACK background with WHITE text */
+/* Light mode - TEAL background with BLACK text */
 body:not([data-theme="dark"]) .project-links .project-link::before,
 html:not([data-theme="dark"]) .project-links .project-link::before,
 .project-links .project-link::before {
-  background: #000000 !important;
+  background: var(--accent-color) !important;
 }
 
 body:not([data-theme="dark"]) .project-links .project-link:hover,
 html:not([data-theme="dark"]) .project-links .project-link:hover,
 .project-links .project-link:hover {
-  color: #ffffff !important;
+  color: #000000 !important;
 }
 
 body:not([data-theme="dark"]) .project-links .project-link:hover span,
@@ -3793,12 +4214,12 @@ html:not([data-theme="dark"]) .project-links .project-link:hover span,
 html:not([data-theme="dark"]) .project-links .project-link:hover i,
 .project-links .project-link:hover span,
 .project-links .project-link:hover i {
-  color: #ffffff !important;
+  color: #000000 !important;
 }
 
-/* Dark mode - GREY background with BLACK text */
+/* Dark mode - TEAL background with BLACK text */
 [data-theme="dark"] .project-links .project-link::before {
-  background: #e5e7eb !important;
+  background: var(--accent-color) !important;
 }
 
 [data-theme="dark"] .project-links .project-link:hover {
@@ -4317,4 +4738,97 @@ html:not([data-theme="dark"]) .project-links .project-link:hover i,
   .status-dot {
     animation: none !important;
   }
+}
+
+/* ===== FORCE GRADIENT BLUE COLORS FOR PROJECT BUTTONS ===== */
+/* This override ensures gradient blue colors are applied with maximum specificity */
+.project-link::before,
+.projects .project-link::before,
+.projects .project-links .project-link::before,
+body .project-links .project-link::before,
+html .project-links .project-link::before,
+body:not([data-theme="dark"]) .project-links .project-link::before,
+html:not([data-theme="dark"]) .project-links .project-link::before,
+[data-theme="dark"] .project-links .project-link::before {
+  background: linear-gradient(135deg, #1B365D, #4A90B8, rgba(255, 255, 255, 0.1), #1B365D) !important;
+}
+
+.project-link,
+.projects .project-link,
+.projects .project-links .project-link,
+body .project-links .project-link,
+html .project-links .project-link {
+  background: linear-gradient(135deg, transparent, rgba(27, 54, 93, 0.08), rgba(255, 255, 255, 0.05), transparent) !important;
+  border: 2px solid transparent !important;
+  background-clip: padding-box !important;
+  position: relative !important;
+  overflow: hidden !important;
+  color: inherit !important;
+  z-index: 1 !important;
+}
+
+.project-link::after,
+.projects .project-link::after,
+.projects .project-links .project-link::after,
+body .project-links .project-link::after,
+html .project-links .project-link::after {
+  content: '' !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: -100% !important;
+  width: 100% !important;
+  height: 100% !important;
+  background: linear-gradient(90deg, transparent, rgba(74, 144, 184, 0.2), rgba(255, 255, 255, 0.15), rgba(74, 144, 184, 0.2), transparent) !important;
+  transition: left 0.6s ease !important;
+  z-index: 0 !important;
+}
+
+.project-link:hover::after,
+.projects .project-link:hover::after,
+.projects .project-links .project-link:hover::after,
+body .project-links .project-link:hover::after,
+html .project-links .project-link:hover::after {
+  left: 100% !important;
+}
+
+.project-link:hover,
+.projects .project-link:hover,
+.projects .project-links .project-link:hover,
+body .project-links .project-link:hover,
+html .project-links .project-link:hover,
+body:not([data-theme="dark"]) .project-links .project-link:hover,
+html:not([data-theme="dark"]) .project-links .project-link:hover {
+  background: var(--accent-color) !important;
+  color: #FFFFFF !important;
+  border-color: var(--accent-color) !important;
+  box-shadow: var(--shadow-medium) !important;
+  transform: translateY(-2px) !important;
+  z-index: 2 !important;
+}
+
+[data-theme="dark"] .project-links .project-link:hover {
+  background: var(--accent-color) !important;
+  color: #000000 !important;
+  border-color: var(--accent-color) !important;
+  box-shadow: var(--shadow-medium) !important;
+  transform: translateY(-2px) !important;
+  z-index: 2 !important;
+}
+
+/* ===== FINAL CURSOR COLOR OVERRIDE ===== */
+/* Clean cursor styling without excessive effects */
+body .custom-cursor .cursor-dot,
+html .custom-cursor .cursor-dot,
+.custom-cursor .cursor-dot,
+div.custom-cursor .cursor-dot {
+  background: linear-gradient(135deg, var(--accent-color), var(--secondary-color)) !important;
+  box-shadow: var(--shadow-light) !important;
+}
+
+body[data-theme="dark"] .custom-cursor .cursor-dot,
+html[data-theme="dark"] .custom-cursor .cursor-dot,
+[data-theme="dark"] .custom-cursor .cursor-dot,
+[data-theme="dark"] div.custom-cursor .cursor-dot {
+  background: linear-gradient(135deg, var(--accent-light), var(--secondary-light)) !important;
+  box-shadow: var(--shadow-light) !important;
 }

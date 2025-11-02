@@ -26,11 +26,10 @@
         .project-overlay .project-links .project-link,
         .projects .project-links .project-link,
         .project-link {
-            background: #ffffff !important;
-            background-color: #ffffff !important;
-            color: #000000 !important;
-            border: 2px solid #ffffff !important;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+            background: rgba(248, 250, 252, 0.9) !important;
+            color: #334155 !important;
+            border: 1px solid rgba(8, 145, 178, 0.4) !important;
+            box-shadow: 0 2px 8px rgba(8, 145, 178, 0.2) !important;
             border-radius: 8px !important;
             width: 48px !important;
             height: 48px !important;
@@ -43,38 +42,35 @@
             margin: 0 !important;
             text-decoration: none !important;
             font-weight: normal !important;
-            overflow: visible !important;
+            overflow: hidden !important;
+            position: relative !important;
+            transition: all 0.3s ease !important;
+            backdrop-filter: blur(10px) !important;
         }
         
-        /* Remove ALL pseudo-elements */
-        .project-card .project-overlay .project-links .project-link::before,
+        /* Removed shimmer effect for cleaner design */
+        
+        /* Remove other pseudo-elements */
         .project-card .project-overlay .project-links .project-link::after,
-        .projects .project-card .project-overlay .project-links .project-link::before,
         .projects .project-card .project-overlay .project-links .project-link::after,
-        .project-overlay .project-links .project-link::before,
         .project-overlay .project-links .project-link::after,
-        .projects .project-links .project-link::before,
         .projects .project-links .project-link::after,
-        .project-link::before,
         .project-link::after {
             display: none !important;
             content: none !important;
-            background: none !important;
-            opacity: 0 !important;
-            visibility: hidden !important;
         }
         
-        /* HOVER STATES */
+        /* HOVER STATES - Subtle and Modern */
         .project-card .project-overlay .project-links .project-link:hover,
         .projects .project-card .project-overlay .project-links .project-link:hover,
         .project-overlay .project-links .project-link:hover,
         .projects .project-links .project-link:hover,
         .project-link:hover {
-            background: #BCBC82 !important;
-            background-color: #BCBC82 !important;
-            color: #000000 !important;
-            border-color: #BCBC82 !important;
-            transform: scale(1.1) !important;
+            background: #0891b2 !important;
+            color: #ffffff !important;
+            border-color: #0891b2 !important;
+            transform: translateY(-2px) scale(1.05) !important;
+            box-shadow: 0 8px 20px rgba(8, 145, 178, 0.4) !important;
         }
         
         /* ICON STYLING */
@@ -86,7 +82,7 @@
         .project-link .fa,
         .project-link .fas,
         .project-link .fab {
-            color: #000000 !important;
+            color: #0891b2 !important;  /* Dark cyan for better contrast */
             background: transparent !important;
             background-color: transparent !important;
             font-size: 1.25rem !important;
@@ -94,6 +90,7 @@
             position: relative !important;
             line-height: 1 !important;
             display: inline-block !important;
+            transition: all 0.3s ease !important;
         }
         
         /* HOVER ICON STATES */
@@ -105,14 +102,9 @@
         .project-link:hover .fa,
         .project-link:hover .fas,
         .project-link:hover .fab {
-            color: #000000 !important;
+            color: #ffffff !important;
             background: transparent !important;
             background-color: transparent !important;
-        }
-        
-        .project-link:hover i {
-            color: #000000 !important;
-            background: transparent !important;
         }
         
         /* DARK MODE STYLING */
@@ -121,10 +113,11 @@
         [data-theme="dark"] .project-overlay .project-links .project-link,
         [data-theme="dark"] .projects .project-links .project-link,
         [data-theme="dark"] .project-link {
-            background: rgba(255, 255, 255, 0.1) !important;
-            background-color: rgba(255, 255, 255, 0.1) !important;
-            color: #ffffff !important;
-            border: 2px solid rgba(255, 255, 255, 0.3) !important;
+            background: rgba(30, 41, 59, 0.8) !important;
+            color: #f8fafc !important;
+            border: 1px solid rgba(103, 232, 249, 0.4) !important;
+            box-shadow: 0 2px 8px rgba(103, 232, 249, 0.2) !important;
+            backdrop-filter: blur(10px) !important;
         }
         
         [data-theme="dark"] .project-card .project-overlay .project-links .project-link:hover,
@@ -132,10 +125,26 @@
         [data-theme="dark"] .project-overlay .project-links .project-link:hover,
         [data-theme="dark"] .projects .project-links .project-link:hover,
         [data-theme="dark"] .project-link:hover {
-            background: #BCBC82 !important;
-            background-color: #BCBC82 !important;
+            background: #67e8f9 !important;
             color: #000000 !important;
-            border-color: #BCBC82 !important;
+            border-color: #67e8f9 !important;
+            box-shadow: 0 8px 20px rgba(103, 232, 249, 0.5) !important;
+        }
+        
+        [data-theme="dark"] .project-card .project-overlay .project-links .project-link i,
+        [data-theme="dark"] .projects .project-card .project-overlay .project-links .project-link i,
+        [data-theme="dark"] .project-overlay .project-links .project-link i,
+        [data-theme="dark"] .projects .project-links .project-link i,
+        [data-theme="dark"] .project-link i {
+            color: #67e8f9 !important;
+        }
+        
+        [data-theme="dark"] .project-card .project-overlay .project-links .project-link:hover i,
+        [data-theme="dark"] .projects .project-card .project-overlay .project-links .project-link:hover i,
+        [data-theme="dark"] .project-overlay .project-links .project-link:hover i,
+        [data-theme="dark"] .projects .project-links .project-link:hover i,
+        [data-theme="dark"] .project-link:hover i {
+            color: #000000 !important;
         }
         
         [data-theme="dark"] .project-card .project-overlay .project-links .project-link i,
@@ -157,7 +166,7 @@
         [data-theme="dark"] .project-link:hover .fa,
         [data-theme="dark"] .project-link:hover .fas,
         [data-theme="dark"] .project-link:hover .fab {
-            color: #000000 !important;
+            color: #FFFFFF !important;
         }
         
         /* FORCE OVERRIDE ANY REMAINING CONFLICTING STYLES */
@@ -215,7 +224,7 @@
                 <div class="hero-text">
                     <h1 class="hero-title">
                         <span class="hero-greeting">Hi, I'm Hammadh</span>
-                        <span class="hero-main">I build digital experiences that matter</span>
+                        <span class="hero-main">I Build Digital Experiences That Matter</span>
                     </h1>
                     <p class="hero-description">
                         A passionate software engineering student crafting modern web applications 

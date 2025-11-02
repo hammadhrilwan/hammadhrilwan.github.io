@@ -148,6 +148,23 @@ class ModernScrollAnimations {
       cursorDot.className = 'cursor-dot';
       cursor.appendChild(cursorDot);
 
+      // Force blue color directly
+      const updateCursorColor = () => {
+        const isDarkMode = document.documentElement.getAttribute('data-theme') === 'dark';
+        cursorDot.style.backgroundColor = isDarkMode ? '#0EA5E9' : '#1E40AF';
+        cursorDot.style.background = isDarkMode ? '#0EA5E9' : '#1E40AF';
+      };
+      
+      // Set initial color
+      updateCursorColor();
+      
+      // Watch for theme changes
+      const observer = new MutationObserver(updateCursorColor);
+      observer.observe(document.documentElement, { 
+        attributes: true, 
+        attributeFilter: ['data-theme'] 
+      });
+
       let mouseX = 0, mouseY = 0;
       let cursorX = 0, cursorY = 0;
 
