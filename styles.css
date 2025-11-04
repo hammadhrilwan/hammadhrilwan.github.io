@@ -195,8 +195,9 @@ body {
 
 /* Dark mode cursor */
 [data-theme="dark"] .cursor-dot {
-  background: linear-gradient(135deg, var(--accent-light), var(--secondary-light));
-  opacity: 0.9;
+  background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+  opacity: 1; /* Increased opacity for better visibility */
+  box-shadow: 0 0 10px rgba(103, 232, 249, 0.5); /* Added glow for better visibility */
 }
 
 /* Additional override for any possible conflicting styles */
@@ -206,8 +207,8 @@ body {
 }
 
 [data-theme="dark"] .custom-cursor .cursor-dot {
-  background: linear-gradient(135deg, var(--accent-light), var(--secondary-light));
-  box-shadow: var(--shadow-light);
+  background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+  box-shadow: 0 0 10px rgba(103, 232, 249, 0.5); /* Added glow for visibility */
 }
 
 .custom-cursor.cursor-hover {
@@ -4871,8 +4872,9 @@ body[data-theme="dark"] .custom-cursor .cursor-dot,
 html[data-theme="dark"] .custom-cursor .cursor-dot,
 [data-theme="dark"] .custom-cursor .cursor-dot,
 [data-theme="dark"] div.custom-cursor .cursor-dot {
-  background: linear-gradient(135deg, var(--accent-light), var(--secondary-light)) !important;
-  box-shadow: var(--shadow-light) !important;
+  background: linear-gradient(135deg, var(--accent-color), var(--secondary-color)) !important;
+  box-shadow: 0 0 10px rgba(103, 232, 249, 0.5) !important; /* Added glow for visibility */
+  opacity: 1 !important;
 }
 
 /* ===== TECH TAG VISIBILITY FIXES ===== */
